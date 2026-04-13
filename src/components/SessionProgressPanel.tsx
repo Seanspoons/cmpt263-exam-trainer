@@ -1,0 +1,360 @@
+import { useMemo, useState } from 'react'
+import { FiBarChart2, FiRotateCcw, FiTarget } from 'react-icons/fi'
+import { IoFlame } from 'react-icons/io5'
+import { calculateAccuracy, useSessionContext } from './SessionContext'
+import { useConfirmDialog } from './ConfirmDialogContext'
+
+type RankedEntry = {
+  label: string
+  attempted: number
+  correct: number
+  accuracy: number
+}
+
+type RankedSubtopicEntry = RankedEntry & {
+  unitLabel: string
+  subtopicLabel: string
+}
+
+type SessionProgressPanelProps = {
+  onOpenExamMode?: () => void
+}
+
+type UnitSortKey = 'label' | 'correct' | 'attempted' | 'accuracy'
+type SubtopicSortKey = 'label' | 'correct' | 'attempted' | 'accuracy'
+type SortDirection = 'asc' | 'desc'
+
+export function SessionProgressPanel({ onOpenExamMode }: SessionProgressPanelProps) {
+  const { state, resetSession } = useSessionContext()
+  const { requestConfirm } = useConfirmDialog()
+  const [showReview, setShowReview] = useState(false)
+  const [unitSort, setUnitSort] = useState<{
+    key: UnitSortKey
+    direction: SortDirection
+  }>({ key: 'attempted', direction: 'desc' })
+  const [subtopicSort, setSubtopicSort] = useState<{
+    key: SubtopicSortKey
+    direction: SortDirection
+  }>({ key: 'attempted', direction: 'desc' })
+
+  const overallAccuracy = calculateAccuracy(state.totalCorrect, state.totalQuestionsAttempted)
+  const isFreshSession = state.totalQuestionsAttempted === 0
+
+  const rankedUnits = useMemo(() => {
+    const entries: RankedEntry[] = Object.entries(state.byUnit).map(([label, bucket]) => ({
+      label,
+      attempted: bucket.attempted,
+      correct: bucket.correct,
+      accuracy: calculateAccuracy(bucket.correct, bucket.attempted),
+    }))
+    return entries.sort((a, b) => b.accuracy - a.accuracy)
+  }, [state.byUnit])
+
+  const strongUnits = rankedUnits.filter((entry) => entry.attempted > 0).slice(0, 3)
+  const strongLabels = new Set(strongUnits.map((entry) => entry.label))
+  const weakUnits = [...rankedUnits]
+    .filter((entry) => entry.attempted > 0)
+    .sort((a, b) => a.accuracy - b.accuracy)
+    .filter((entry) => !strongLabels.has(entry.label))
+    .slice(0, 3)
+
+  const rankedSubtopics = useMemo<RankedSubtopicEntry[]>(() => {
+    return Object.values(state.bySubtopic)
+      .map((bucket) => ({
+        unitLabel: bucket.unitLabel,
+        subtopicLabel: bucket.subtopicLabel,
+        label: `${bucket.unitLabel} > ${bucket.subtopicLabel}`,
+        attempted: bucket.attempted,
+        correct: bucket.correct,
+        accuracy: calculateAccuracy(bucket.correct, bucket.attempted),
+      }))
+      .sort((a, b) => b.accuracy - a.accuracy)
+  }, [state.bySubtopic])
+  const unitBreakdown = useMemo(() => {
+    return [...rankedUnits].sort((a, b) => {
+      const modifier = unitSort.direction === 'asc' ? 1 : -1
+      if (unitSort.key === 'label') {
+        return a.label.localeCompare(b.label) * modifier
+      }
+      if (unitSort.key === 'correct') {
+        return (a.correct - b.correct) * modifier
+      }
+      if (unitSort.key === 'attempted') {
+        return (a.attempted - b.attempted) * modifier
+      }
+      return (a.accuracy - b.accuracy) * modifier
+    })
+  }, [rankedUnits, unitSort])
+  const sortedSubtopics = useMemo(() => {
+    return [...rankedSubtopics].sort((a, b) => {
+      const modifier = subtopicSort.direction === 'asc' ? 1 : -1
+      if (subtopicSort.key === 'label') {
+        return a.label.localeCompare(b.label) * modifier
+      }
+      if (subtopicSort.key === 'correct') {
+        return (a.correct - b.correct) * modifier
+      }
+      if (subtopicSort.key === 'attempted') {
+        return (a.attempted - b.attempted) * modifier
+      }
+      return (a.accuracy - b.accuracy) * modifier
+    })
+  }, [rankedSubtopics, subtopicSort])
+
+  const cycleDirection = (current: SortDirection): SortDirection =>
+    current === 'desc' ? 'asc' : 'desc'
+
+  const handleUnitSort = (key: UnitSortKey) => {
+    setUnitSort((current) =>
+      current.key === key
+        ? { key, direction: cycleDirection(current.direction) }
+        : { key, direction: 'desc' },
+    )
+  }
+
+  const handleSubtopicSort = (key: SubtopicSortKey) => {
+    setSubtopicSort((current) =>
+      current.key === key
+        ? { key, direction: cycleDirection(current.direction) }
+        : { key, direction: 'desc' },
+    )
+  }
+
+  const sortMarker = (active: boolean, direction: SortDirection): string => {
+    if (!active) return ''
+    return direction === 'desc' ? ' ↓' : ' ↑'
+  }
+
+  const confirmResetSession = async () => {
+    const confirmed = await requestConfirm({
+      title: 'Reset Session Progress?',
+      message: 'This clears current session stats, streaks, and review data.',
+      confirmLabel: 'Reset Session',
+      cancelLabel: 'Keep Progress',
+    })
+    if (!confirmed) return
+    resetSession()
+  }
+
+  const weakestSubtopics = useMemo(() => {
+    return Object.values(state.bySubtopic)
+      .filter((bucket) => bucket.attempted > 0)
+      .map((bucket) => ({
+        unitLabel: bucket.unitLabel,
+        subtopicLabel: bucket.subtopicLabel,
+        attempted: bucket.attempted,
+        accuracy: calculateAccuracy(bucket.correct, bucket.attempted),
+      }))
+      .sort((a, b) => {
+        if (a.accuracy !== b.accuracy) return a.accuracy - b.accuracy
+        return b.attempted - a.attempted
+      })
+      .slice(0, 2)
+  }, [state.bySubtopic])
+
+  return (
+    <section className="session-panel">
+      <div className="session-panel-top">
+        <div>
+          <h2 className="session-panel-title">Session Progress</h2>
+          <p className="session-panel-stats">
+            <strong>
+              {state.totalCorrect} / {state.totalQuestionsAttempted}
+            </strong>{' '}
+            correct ({overallAccuracy}%)
+          </p>
+          <p className="session-panel-streak">
+            <span className="session-streak-icon" aria-hidden="true">
+              <IoFlame />
+            </span>{' '}
+            Streak: <strong>{state.currentStreak}</strong> &nbsp; Best:{' '}
+            <strong>{state.bestStreak}</strong>
+          </p>
+        </div>
+        <div className="session-panel-actions">
+          <button
+            className="button-secondary"
+            onClick={() => setShowReview((value) => !value)}
+          >
+            <FiBarChart2 aria-hidden="true" />
+            <span>{showReview ? 'Hide Review' : 'Review Session'}</span>
+          </button>
+          <button className="button-secondary" onClick={confirmResetSession}>
+            <FiRotateCcw aria-hidden="true" />
+            <span>Reset Session</span>
+          </button>
+          {onOpenExamMode ? (
+            <button className="button-secondary" onClick={onOpenExamMode}>
+              <FiTarget aria-hidden="true" />
+              <span>Exam Mode</span>
+            </button>
+          ) : null}
+        </div>
+      </div>
+      {weakestSubtopics.length > 0 ? (
+        <p className="small-note">
+          Weak targets: {weakestSubtopics.map((entry) => `${entry.unitLabel} > ${entry.subtopicLabel}`).join('  |  ')}
+        </p>
+      ) : null}
+
+      {showReview ? (
+        <div className="session-review-grid">
+          <div className="session-review-card">
+            <h3>Overall</h3>
+            <p>Total attempted: {state.totalQuestionsAttempted}</p>
+            <p>Total correct: {state.totalCorrect}</p>
+            <p>Total incorrect: {state.totalIncorrect}</p>
+            <p>Accuracy: {overallAccuracy}%</p>
+            <p>Best streak: {state.bestStreak}</p>
+          </div>
+          <div className="session-review-card">
+            <h3>Strong Units</h3>
+            {strongUnits.length === 0 ? (
+              <p>{isFreshSession ? 'No attempts yet.' : 'None yet.'}</p>
+            ) : (
+              <ul>
+                {strongUnits.map((entry) => (
+                  <li key={entry.label}>
+                    {entry.label} ({entry.accuracy}%)
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+          <div className="session-review-card">
+            <h3>Weak Units</h3>
+            {weakUnits.length === 0 ? (
+              <p>{isFreshSession ? 'No attempts yet.' : 'None yet.'}</p>
+            ) : (
+              <ul>
+                {weakUnits.map((entry) => (
+                  <li key={entry.label}>
+                    {entry.label} ({entry.accuracy}%)
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+          <div className="session-review-card session-review-card-wide">
+            <h3>Unit Breakdown</h3>
+            {unitBreakdown.length === 0 ? (
+              <p>No attempts yet.</p>
+            ) : (
+              <div className="table-scroll">
+                <table className="compact-table">
+                  <thead>
+                    <tr>
+                      <th>
+                        <button
+                          className="table-sort-button"
+                          onClick={() => handleUnitSort('label')}
+                        >
+                          Unit{sortMarker(unitSort.key === 'label', unitSort.direction)}
+                        </button>
+                      </th>
+                      <th>
+                        <button
+                          className="table-sort-button"
+                          onClick={() => handleUnitSort('correct')}
+                        >
+                          Correct{sortMarker(unitSort.key === 'correct', unitSort.direction)}
+                        </button>
+                      </th>
+                      <th>
+                        <button
+                          className="table-sort-button"
+                          onClick={() => handleUnitSort('attempted')}
+                        >
+                          Attempted
+                          {sortMarker(unitSort.key === 'attempted', unitSort.direction)}
+                        </button>
+                      </th>
+                      <th>
+                        <button
+                          className="table-sort-button"
+                          onClick={() => handleUnitSort('accuracy')}
+                        >
+                          Accuracy{sortMarker(unitSort.key === 'accuracy', unitSort.direction)}
+                        </button>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {unitBreakdown.map((entry) => (
+                      <tr key={entry.label}>
+                        <td>{entry.label}</td>
+                        <td>{entry.correct}</td>
+                        <td>{entry.attempted}</td>
+                        <td>{entry.accuracy}%</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            )}
+          </div>
+          <div className="session-review-card session-review-card-wide">
+            <h3>Subtopic Breakdown</h3>
+            {rankedSubtopics.length === 0 ? (
+              <p>No attempts yet.</p>
+            ) : (
+              <div className="table-scroll">
+                <table className="compact-table">
+                  <thead>
+                    <tr>
+                      <th>
+                        <button
+                          className="table-sort-button"
+                          onClick={() => handleSubtopicSort('label')}
+                        >
+                          Subtopic{sortMarker(subtopicSort.key === 'label', subtopicSort.direction)}
+                        </button>
+                      </th>
+                      <th>
+                        <button
+                          className="table-sort-button"
+                          onClick={() => handleSubtopicSort('correct')}
+                        >
+                          Correct
+                          {sortMarker(subtopicSort.key === 'correct', subtopicSort.direction)}
+                        </button>
+                      </th>
+                      <th>
+                        <button
+                          className="table-sort-button"
+                          onClick={() => handleSubtopicSort('attempted')}
+                        >
+                          Attempted
+                          {sortMarker(subtopicSort.key === 'attempted', subtopicSort.direction)}
+                        </button>
+                      </th>
+                      <th>
+                        <button
+                          className="table-sort-button"
+                          onClick={() => handleSubtopicSort('accuracy')}
+                        >
+                          Accuracy
+                          {sortMarker(subtopicSort.key === 'accuracy', subtopicSort.direction)}
+                        </button>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {sortedSubtopics.map((entry) => (
+                      <tr key={entry.label}>
+                        <td>{entry.label}</td>
+                        <td>{entry.correct}</td>
+                        <td>{entry.attempted}</td>
+                        <td>{entry.accuracy}%</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            )}
+          </div>
+        </div>
+      ) : null}
+    </section>
+  )
+}

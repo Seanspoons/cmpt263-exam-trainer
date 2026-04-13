@@ -1,0 +1,11 @@
+<svg width="185" height="185" viewBox="0 0 185 185" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="92.5" cy="92.5" r="92.5" fill="#EBEBEB"/>
+<path d="M43 93H143" stroke="#4A6572" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M43 99C46.3137 99 49 96.3137 49 93C49 89.6863 46.3137 87 43 87C39.6863 87 37 89.6863 37 93C37 96.3137 39.6863 99 43 99Z" fill="#4A6572" stroke="#4A6572" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M93 99C96.3137 99 99 96.3137 99 93C99 89.6863 96.3137 87 93 87C89.6863 87 87 89.6863 87 93C87 96.3137 89.6863 99 93 99Z" fill="#5782C2" stroke="#5782C2" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M143 99C146.314 99 149 96.3137 149 93C149 89.6863 146.314 87 143 87C139.686 87 137 89.6863 137 93C137 96.3137 139.686 99 143 99Z" fill="#4A6572" stroke="#4A6572" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M93 93L123 63H143" stroke="#4A6572" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M93 93L123 123H143" stroke="#4A6572" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="8 6"/>
+<path d="M143 67C145.209 67 147 65.2091 147 63C147 60.7909 145.209 59 143 59C140.791 59 139 60.7909 139 63C139 65.2091 140.791 67 143 67Z" fill="white" stroke="#4A6572" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M143 127C145.209 127 147 125.209 147 123C147 120.791 145.209 119 143 119C140.791 119 139 120.791 139 123C139 125.209 140.791 127 143 127Z" fill="white" stroke="#4A6572" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
