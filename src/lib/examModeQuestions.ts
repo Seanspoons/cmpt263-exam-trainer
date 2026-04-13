@@ -21,11 +21,23 @@ import {
   generateGrayCategoryQuestion,
 } from '../features/darkPatterns/questions'
 import {
+  generateConsentPrivacyQuestion,
+  generateDesignEthicsQuestion,
+  generateInclusionAccessibilityQuestion,
+  generatePersonalizationQuestion,
+  generateResearchEthicsQuestion,
+} from '../features/ethicsInclusivityAccessibility/questions'
+import {
   generateQuestionnaireBasicsQuestion,
   generateQuestionnaireInterpretationQuestion,
   generateUeqQuestion,
   generateUeqShortQuestion,
 } from '../features/questionnaires/questions'
+import {
+  generateTuiConceptQuestion,
+  generateTuiFoundationQuestion,
+  generateTuiStrengthQuestion,
+} from '../features/tui/questions'
 import {
   generateAnalyticsQuestion,
   generateAnalyticalEvaluationQuestion,
@@ -66,6 +78,18 @@ const EXAM_GENERATORS_BY_UNIT: Partial<Record<UnitId, Array<() => NetworkingQues
     generateBrignullQuestion,
     generateGrayCategoryQuestion,
     generateDarkPatternRedesignQuestion,
+  ],
+  'ethics-inclusivity-accessibility': [
+    generateResearchEthicsQuestion,
+    generateConsentPrivacyQuestion,
+    generateDesignEthicsQuestion,
+    generateInclusionAccessibilityQuestion,
+    generatePersonalizationQuestion,
+  ],
+  'tangible-user-interfaces': [
+    generateTuiFoundationQuestion,
+    generateTuiConceptQuestion,
+    generateTuiStrengthQuestion,
   ],
 }
 

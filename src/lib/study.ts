@@ -54,13 +54,13 @@ export const UNIT_OPTIONS: UnitOption[] = [
   {
     id: 'ethics-inclusivity-accessibility',
     label: 'Ethics + Inclusivity + Accessibility',
-    implemented: false,
-    questionCount: 0,
+    implemented: true,
+    questionCount: 19,
   },
   {
     id: 'tangible-user-interfaces',
     label: 'Tangible User Interfaces (TUI)',
-    implemented: false,
-    questionCount: 0,
+    implemented: true,
+    questionCount: 9,
   },
 ]
