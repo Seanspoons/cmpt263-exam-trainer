@@ -56,7 +56,7 @@ const SessionContext = createContext<SessionContextValue>({
   resetSession: () => undefined,
 })
 
-const SESSION_STORAGE_KEY = 'cmpt201.session.attempts.v1'
+const SESSION_STORAGE_KEY = 'cmpt263.session.attempts.v1'
 
 function loadAttemptsFromStorage(): AttemptRecord[] {
   if (typeof window === 'undefined') return []

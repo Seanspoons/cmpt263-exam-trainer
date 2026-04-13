@@ -28,7 +28,7 @@ import { UNIT_OPTIONS, type UnitId } from './lib/study'
 import { UNIT_NAVIGATE_EVENT } from './lib/navigation'
 import './App.css'
 
-const ACTIVE_UNIT_STORAGE_KEY = 'cmpt201.nav.activeUnit.v1'
+const ACTIVE_UNIT_STORAGE_KEY = 'cmpt263.nav.activeUnit.v1'
 
 function loadActiveUnit(): UnitId {
   if (typeof window === 'undefined') return 'virtual-memory'
@@ -40,7 +40,6 @@ function loadActiveUnit(): UnitId {
 }
 
 function App() {
-  const brandWordmarkSrc = `${import.meta.env.BASE_URL}cmpt-201-exam-trainer-wordmark.svg`
   const [activeUnit, setActiveUnit] = useState<UnitId>(() => loadActiveUnit())
   const [isUnitMenuOpen, setIsUnitMenuOpen] = useState(false)
   const [isExamModeOpen, setIsExamModeOpen] = useState(false)
@@ -125,11 +124,10 @@ function App() {
         <main className="app-shell">
           <header className="app-header">
             <div className="brand-row">
-              <img
-                src={brandWordmarkSrc}
-                alt="CMPT 201 Exam Trainer"
-                className="brand-wordmark"
-              />
+              <div className="brand-lockup" aria-label="CMPT 263 Final Exam Trainer">
+                <span className="brand-kicker">CMPT 263 • Human-Centered Computing</span>
+                <strong className="brand-title">Final Exam Trainer</strong>
+              </div>
               <button
                 className="info-trigger"
                 aria-label="About this tool"
@@ -152,7 +150,7 @@ function App() {
                     left: tooltipPos.x + 12,
                   }}
                 >
-                  Based on CMPT 201: Systems Programming D100 (Spring 2026)
+                  Based on CMPT 263: Human-Centered Computing D100, Spring 2026
                 </div>
               )}
               <button
@@ -165,8 +163,8 @@ function App() {
                 <span>{isUnitMenuOpen ? 'Close Units' : 'Select Unit'}</span>
               </button>
             </div>
-            <h1 className="visually-hidden">CMPT 201 Exam Trainer</h1>
-            <p>Exam-style drills across all CMPT 201 lecture units</p>
+            <h1 className="visually-hidden">CMPT 263 Final Exam Trainer</h1>
+            <p>Fast active-recall drills across core CMPT 263 final review topics</p>
           </header>
           <SessionProgressPanel onOpenExamMode={() => setIsExamModeOpen(true)} />
           <aside
