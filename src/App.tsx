@@ -1,25 +1,12 @@
 import { useEffect, useState } from 'react'
 import { FiBookOpen, FiChevronRight, FiMenu, FiX, FiInfo } from 'react-icons/fi'
-import { CryptoAlgorithmsUnit } from './features/cryptoAlgorithms/CryptoAlgorithmsUnit'
-import { CryptoApplicationsUnit } from './features/cryptoApplications/CryptoApplicationsUnit'
-import { FileIoUnit } from './features/fileIo/FileIoUnit'
-import { FilesystemsUnit } from './features/filesystems/FilesystemsUnit'
-import { ForkExecUnit } from './features/forkExec/ForkExecUnit'
-import { IpcPipesUnit } from './features/ipcPipes/IpcPipesUnit'
-import { IpcSharedMemoryUnit } from './features/ipcSharedMemory/IpcSharedMemoryUnit'
-import { MemoryManagementUnit } from './features/memoryManagement/MemoryManagementUnit'
-import { NetworkingAfInetUnit } from './features/networkingAfInet/NetworkingAfInetUnit'
-import { NetworkingMultipleClientsUnit } from './features/networkingMultipleClients/NetworkingMultipleClientsUnit'
-import { NetworkingSocketsUnit } from './features/networkingSockets/NetworkingSocketsUnit'
-import { SchedulingUnit } from './features/scheduling/SchedulingUnit'
-import { SignalsUnit } from './features/signals/SignalsUnit'
-import { SleepUnit } from './features/sleep/SleepUnit'
-import { SyncMutexUnit } from './features/syncMutex/SyncMutexUnit'
-import { SyncPatternsUnit } from './features/syncPatterns/SyncPatternsUnit'
-import { ThreadsUnit } from './features/threads/ThreadsUnit'
-import { TourSystemsUnit } from './features/tourSystems/TourSystemsUnit'
-import { VirtualMemoryUnit } from './features/virtualMemory/VirtualMemoryUnit'
-import { WaitErrnoUnit } from './features/waitErrno/WaitErrnoUnit'
+import { CognitiveWalkthroughUnit } from './features/cognitiveWalkthrough/CognitiveWalkthroughUnit'
+import { DarkPatternsUnit } from './features/darkPatterns/DarkPatternsUnit'
+import { EthicsInclusivityAccessibilityUnit } from './features/ethicsInclusivityAccessibility/EthicsInclusivityAccessibilityUnit'
+import { QuestionnairesUnit } from './features/questionnaires/QuestionnairesUnit'
+import { StatisticalAnalysisUnit } from './features/statisticalAnalysis/StatisticalAnalysisUnit'
+import { TuiUnit } from './features/tui/TuiUnit'
+import { UsabilityAnalyticalEvaluationUnit } from './features/usabilityAnalyticalEvaluation/UsabilityAnalyticalEvaluationUnit'
 import { SessionProgressPanel } from './components/SessionProgressPanel'
 import { ExamModePanel } from './components/ExamModePanel'
 import { SessionProvider } from './components/SessionContext'
@@ -31,9 +18,9 @@ import './App.css'
 const ACTIVE_UNIT_STORAGE_KEY = 'cmpt263.nav.activeUnit.v1'
 
 function loadActiveUnit(): UnitId {
-  if (typeof window === 'undefined') return 'virtual-memory'
+  if (typeof window === 'undefined') return 'statistical-analysis'
   const raw = window.localStorage.getItem(ACTIVE_UNIT_STORAGE_KEY)
-  const fallback: UnitId = 'virtual-memory'
+  const fallback: UnitId = 'statistical-analysis'
   if (!raw) return fallback
   const isKnown = UNIT_OPTIONS.some((option) => option.id === raw)
   return isKnown ? (raw as UnitId) : fallback
@@ -73,46 +60,20 @@ function App() {
 
   const renderUnit = () => {
     switch (activeUnit) {
-      case 'tour-computer-systems':
-        return <TourSystemsUnit />
-      case 'sleep':
-        return <SleepUnit />
-      case 'fork-exec':
-        return <ForkExecUnit />
-      case 'wait-errno':
-        return <WaitErrnoUnit />
-      case 'signals':
-        return <SignalsUnit />
-      case 'scheduling':
-        return <SchedulingUnit />
-      case 'memory-management':
-        return <MemoryManagementUnit />
-      case 'virtual-memory':
-        return <VirtualMemoryUnit />
-      case 'threads':
-        return <ThreadsUnit />
-      case 'sync-mutex':
-        return <SyncMutexUnit />
-      case 'sync-patterns':
-        return <SyncPatternsUnit />
-      case 'file-io':
-        return <FileIoUnit />
-      case 'filesystems':
-        return <FilesystemsUnit />
-      case 'networking-sockets':
-        return <NetworkingSocketsUnit />
-      case 'networking-af-inet':
-        return <NetworkingAfInetUnit />
-      case 'networking-multiple-clients':
-        return <NetworkingMultipleClientsUnit />
-      case 'ipc-pipes':
-        return <IpcPipesUnit />
-      case 'ipc-shared-memory':
-        return <IpcSharedMemoryUnit />
-      case 'crypto-algorithms':
-        return <CryptoAlgorithmsUnit />
-      case 'crypto-applications':
-        return <CryptoApplicationsUnit />
+      case 'statistical-analysis':
+        return <StatisticalAnalysisUnit />
+      case 'questionnaires':
+        return <QuestionnairesUnit />
+      case 'usability-analytical-evaluation':
+        return <UsabilityAnalyticalEvaluationUnit />
+      case 'cognitive-walkthrough':
+        return <CognitiveWalkthroughUnit />
+      case 'dark-patterns':
+        return <DarkPatternsUnit />
+      case 'ethics-inclusivity-accessibility':
+        return <EthicsInclusivityAccessibilityUnit />
+      case 'tangible-user-interfaces':
+        return <TuiUnit />
       default:
         return null
     }
@@ -164,7 +125,7 @@ function App() {
               </button>
             </div>
             <h1 className="visually-hidden">CMPT 263 Final Exam Trainer</h1>
-            <p>Fast active-recall drills across core CMPT 263 final review topics</p>
+            <p>Fast active-recall drills across core CMPT 263: Human-Centered Computing units</p>
           </header>
           <SessionProgressPanel onOpenExamMode={() => setIsExamModeOpen(true)} />
           <aside

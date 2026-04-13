@@ -23,7 +23,7 @@ export function PlaceholderPanel({
         </p>
         <p>
           {message ??
-            'This subtopic is coming soon. We are preparing exam-style tracing, output prediction, and concept-check drills.'}
+            'This subtopic is coming soon. We are preparing exam-style concept checks, scenario recognition drills, and short-answer review questions.'}
         </p>
         {plannedDrills && plannedDrills.length > 0 ? (
           <ul>
@@ -33,7 +33,7 @@ export function PlaceholderPanel({
           </ul>
         ) : null}
         <p className="small-note">
-          More practice sets will be added here in a future update.
+          More review sets will be added here in a future update.
         </p>
       </div>
     </div>
