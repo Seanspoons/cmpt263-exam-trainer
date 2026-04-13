@@ -24,6 +24,9 @@ type UnitSortKey = 'label' | 'correct' | 'attempted' | 'accuracy'
 type SubtopicSortKey = 'label' | 'correct' | 'attempted' | 'accuracy'
 type SortDirection = 'asc' | 'desc'
 
+const MIN_ATTEMPTS_FOR_WEAK_TARGET = 2
+const WEAK_TARGET_ACCURACY_CUTOFF = 70
+
 export function SessionProgressPanel({ onOpenExamMode }: SessionProgressPanelProps) {
   const { state, resetSession } = useSessionContext()
   const { requestConfirm } = useConfirmDialog()
@@ -53,7 +56,11 @@ export function SessionProgressPanel({ onOpenExamMode }: SessionProgressPanelPro
   const strongUnits = rankedUnits.filter((entry) => entry.attempted > 0).slice(0, 3)
   const strongLabels = new Set(strongUnits.map((entry) => entry.label))
   const weakUnits = [...rankedUnits]
-    .filter((entry) => entry.attempted > 0)
+    .filter(
+      (entry) =>
+        entry.attempted >= MIN_ATTEMPTS_FOR_WEAK_TARGET &&
+        entry.accuracy < WEAK_TARGET_ACCURACY_CUTOFF,
+    )
     .sort((a, b) => a.accuracy - b.accuracy)
     .filter((entry) => !strongLabels.has(entry.label))
     .slice(0, 3)
@@ -138,13 +145,14 @@ export function SessionProgressPanel({ onOpenExamMode }: SessionProgressPanelPro
 
   const weakestSubtopics = useMemo(() => {
     return Object.values(state.bySubtopic)
-      .filter((bucket) => bucket.attempted > 0)
+      .filter((bucket) => bucket.attempted >= MIN_ATTEMPTS_FOR_WEAK_TARGET)
       .map((bucket) => ({
         unitLabel: bucket.unitLabel,
         subtopicLabel: bucket.subtopicLabel,
         attempted: bucket.attempted,
         accuracy: calculateAccuracy(bucket.correct, bucket.attempted),
       }))
+      .filter((bucket) => bucket.accuracy < WEAK_TARGET_ACCURACY_CUTOFF)
       .sort((a, b) => {
         if (a.accuracy !== b.accuracy) return a.accuracy - b.accuracy
         return b.attempted - a.attempted
@@ -193,7 +201,10 @@ export function SessionProgressPanel({ onOpenExamMode }: SessionProgressPanelPro
       </div>
       {weakestSubtopics.length > 0 ? (
         <p className="small-note">
-          Weak targets: {weakestSubtopics.map((entry) => `${entry.unitLabel} > ${entry.subtopicLabel}`).join('  |  ')}
+          Weak targets:{' '}
+          {weakestSubtopics
+            .map((entry) => `${entry.unitLabel} > ${entry.subtopicLabel}`)
+            .join('  |  ')}
         </p>
       ) : null}
 
