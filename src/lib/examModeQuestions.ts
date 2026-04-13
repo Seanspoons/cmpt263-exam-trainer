@@ -9,6 +9,18 @@ import {
   generateTestSelectionQuestion,
 } from '../features/statisticalAnalysis/questions'
 import {
+  generateCwFourQuestionPrompt,
+  generateCwOverviewQuestion,
+  generateCwPluralisticQuestion,
+  generateCwProcessQuestion,
+} from '../features/cognitiveWalkthrough/questions'
+import {
+  generateBrignullQuestion,
+  generateDarkPatternFoundationQuestion,
+  generateDarkPatternRedesignQuestion,
+  generateGrayCategoryQuestion,
+} from '../features/darkPatterns/questions'
+import {
   generateQuestionnaireBasicsQuestion,
   generateQuestionnaireInterpretationQuestion,
   generateUeqQuestion,
@@ -42,6 +54,18 @@ const EXAM_GENERATORS_BY_UNIT: Partial<Record<UnitId, Array<() => NetworkingQues
     generateAnalyticalEvaluationQuestion,
     generatePredictiveModelQuestion,
     generateAnalyticsQuestion,
+  ],
+  'cognitive-walkthrough': [
+    generateCwOverviewQuestion,
+    generateCwFourQuestionPrompt,
+    generateCwProcessQuestion,
+    generateCwPluralisticQuestion,
+  ],
+  'dark-patterns': [
+    generateDarkPatternFoundationQuestion,
+    generateBrignullQuestion,
+    generateGrayCategoryQuestion,
+    generateDarkPatternRedesignQuestion,
   ],
 }
 

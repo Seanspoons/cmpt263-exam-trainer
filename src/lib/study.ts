@@ -42,14 +42,14 @@ export const UNIT_OPTIONS: UnitOption[] = [
   {
     id: 'cognitive-walkthrough',
     label: 'Cognitive Walkthrough',
-    implemented: false,
-    questionCount: 0,
+    implemented: true,
+    questionCount: 13,
   },
   {
     id: 'dark-patterns',
     label: 'Dark Patterns',
-    implemented: false,
-    questionCount: 0,
+    implemented: true,
+    questionCount: 16,
   },
   {
     id: 'ethics-inclusivity-accessibility',
