@@ -3,9 +3,11 @@ import { FiBookOpen, FiChevronRight, FiMenu, FiX, FiInfo } from 'react-icons/fi'
 import { CognitiveWalkthroughUnit } from './features/cognitiveWalkthrough/CognitiveWalkthroughUnit'
 import { DarkPatternsUnit } from './features/darkPatterns/DarkPatternsUnit'
 import { EthicsInclusivityAccessibilityUnit } from './features/ethicsInclusivityAccessibility/EthicsInclusivityAccessibilityUnit'
+import { IntroductionToHciUnit } from './features/introductionToHci/IntroductionToHciUnit'
 import { QuestionnairesUnit } from './features/questionnaires/QuestionnairesUnit'
 import { StatisticalAnalysisUnit } from './features/statisticalAnalysis/StatisticalAnalysisUnit'
 import { TuiUnit } from './features/tui/TuiUnit'
+import { UsabilityUnit } from './features/usability/UsabilityUnit'
 import { UsabilityAnalyticalEvaluationUnit } from './features/usabilityAnalyticalEvaluation/UsabilityAnalyticalEvaluationUnit'
 import { SessionProgressPanel } from './components/SessionProgressPanel'
 import { ExamModePanel } from './components/ExamModePanel'
@@ -18,9 +20,9 @@ import './App.css'
 const ACTIVE_UNIT_STORAGE_KEY = 'cmpt263.nav.activeUnit.v1'
 
 function loadActiveUnit(): UnitId {
-  if (typeof window === 'undefined') return 'statistical-analysis'
+  if (typeof window === 'undefined') return 'introduction-to-hci'
   const raw = window.localStorage.getItem(ACTIVE_UNIT_STORAGE_KEY)
-  const fallback: UnitId = 'statistical-analysis'
+  const fallback: UnitId = 'introduction-to-hci'
   if (!raw) return fallback
   const isKnown = UNIT_OPTIONS.some((option) => option.id === raw)
   return isKnown ? (raw as UnitId) : fallback
@@ -61,6 +63,10 @@ function App() {
 
   const renderUnit = () => {
     switch (activeUnit) {
+      case 'introduction-to-hci':
+        return <IntroductionToHciUnit />
+      case 'usability':
+        return <UsabilityUnit />
       case 'statistical-analysis':
         return <StatisticalAnalysisUnit />
       case 'questionnaires':

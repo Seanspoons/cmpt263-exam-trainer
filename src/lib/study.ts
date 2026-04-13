@@ -1,6 +1,8 @@
 import type { ComponentType } from 'react'
 
 export type UnitId =
+  | 'introduction-to-hci'
+  | 'usability'
   | 'statistical-analysis'
   | 'questionnaires'
   | 'usability-analytical-evaluation'
@@ -21,6 +23,18 @@ export type UnitOption = {
 }
 
 export const UNIT_OPTIONS: UnitOption[] = [
+  {
+    id: 'introduction-to-hci',
+    label: 'Introduction to HCI',
+    implemented: false,
+    questionCount: 0,
+  },
+  {
+    id: 'usability',
+    label: 'Usability',
+    implemented: false,
+    questionCount: 0,
+  },
   {
     id: 'statistical-analysis',
     label: 'Statistical Analysis',
