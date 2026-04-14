@@ -9,6 +9,8 @@ export type UnitId =
   | 'heuristic-evaluation'
   | 'task-centered-design'
   | 'visual-design-principles'
+  | 'low-fidelity-prototypes'
+  | 'medium-fidelity-prototypes'
   | 'statistical-analysis'
   | 'questionnaires'
   | 'usability-analytical-evaluation'
@@ -76,6 +78,18 @@ export const UNIT_OPTIONS: UnitOption[] = [
     label: 'Visual Design Principles',
     implemented: true,
     questionCount: 24,
+  },
+  {
+    id: 'low-fidelity-prototypes',
+    label: 'Low-Fidelity Prototypes (LFP)',
+    implemented: false,
+    questionCount: 0,
+  },
+  {
+    id: 'medium-fidelity-prototypes',
+    label: 'Medium-Fidelity Prototypes (MFP)',
+    implemented: false,
+    questionCount: 0,
   },
   {
     id: 'statistical-analysis',

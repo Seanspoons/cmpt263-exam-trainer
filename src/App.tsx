@@ -6,6 +6,8 @@ import { EthicsInclusivityAccessibilityUnit } from './features/ethicsInclusivity
 import { HeuristicEvaluationUnit } from './features/heuristicEvaluation/HeuristicEvaluationUnit'
 import { InterfaceTypesUnit } from './features/interfaceTypes/InterfaceTypesUnit'
 import { IntroductionToHciUnit } from './features/introductionToHci/IntroductionToHciUnit'
+import { LowFidelityPrototypesUnit } from './features/lowFidelityPrototypes/LowFidelityPrototypesUnit'
+import { MediumFidelityPrototypesUnit } from './features/mediumFidelityPrototypes/MediumFidelityPrototypesUnit'
 import { PsychologyUnit } from './features/psychology/PsychologyUnit'
 import { QuestionnairesUnit } from './features/questionnaires/QuestionnairesUnit'
 import { StatisticalAnalysisUnit } from './features/statisticalAnalysis/StatisticalAnalysisUnit'
@@ -85,6 +87,10 @@ function App() {
         return <TaskCenteredDesignUnit />
       case 'visual-design-principles':
         return <VisualDesignPrinciplesUnit />
+      case 'low-fidelity-prototypes':
+        return <LowFidelityPrototypesUnit />
+      case 'medium-fidelity-prototypes':
+        return <MediumFidelityPrototypesUnit />
       case 'statistical-analysis':
         return <StatisticalAnalysisUnit />
       case 'questionnaires':
