@@ -2,6 +2,13 @@ import { randomPick } from './random'
 import type { UnitId } from './study'
 import type { NetworkingQuestion } from '../features/networkingShared/networkingDrills'
 import {
+  generateDiscountHeQuestion,
+  generateHeErrorTypeQuestion,
+  generateHeFoundationsQuestion,
+  generateHeWorkflowSeverityQuestion,
+  generateNielsenHeuristicQuestion,
+} from '../features/heuristicEvaluation/questions'
+import {
   generatePsychActionGulfQuestion,
   generatePsychMemoryLearningQuestion,
   generatePsychMetaphorQuestion,
@@ -126,6 +133,13 @@ const EXAM_GENERATORS_BY_UNIT: Partial<Record<UnitId, Array<() => NetworkingQues
     generatePsychMetaphorQuestion,
     generatePsychActionGulfQuestion,
     generatePsychPrinciplesQuestion,
+  ],
+  'heuristic-evaluation': [
+    generateHeFoundationsQuestion,
+    generateDiscountHeQuestion,
+    generateHeWorkflowSeverityQuestion,
+    generateNielsenHeuristicQuestion,
+    generateHeErrorTypeQuestion,
   ],
   'statistical-analysis': [
     generateControlledExperimentQuestion,

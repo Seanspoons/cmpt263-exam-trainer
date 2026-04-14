@@ -60,8 +60,8 @@ export const UNIT_OPTIONS: UnitOption[] = [
   {
     id: 'heuristic-evaluation',
     label: 'Heuristic Evaluation',
-    implemented: false,
-    questionCount: 0,
+    implemented: true,
+    questionCount: 29,
   },
   {
     id: 'statistical-analysis',
