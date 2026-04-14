@@ -3,8 +3,10 @@ import { FiBookOpen, FiChevronRight, FiMenu, FiX, FiInfo } from 'react-icons/fi'
 import { CognitiveWalkthroughUnit } from './features/cognitiveWalkthrough/CognitiveWalkthroughUnit'
 import { DarkPatternsUnit } from './features/darkPatterns/DarkPatternsUnit'
 import { EthicsInclusivityAccessibilityUnit } from './features/ethicsInclusivityAccessibility/EthicsInclusivityAccessibilityUnit'
+import { HeuristicEvaluationUnit } from './features/heuristicEvaluation/HeuristicEvaluationUnit'
 import { InterfaceTypesUnit } from './features/interfaceTypes/InterfaceTypesUnit'
 import { IntroductionToHciUnit } from './features/introductionToHci/IntroductionToHciUnit'
+import { PsychologyUnit } from './features/psychology/PsychologyUnit'
 import { QuestionnairesUnit } from './features/questionnaires/QuestionnairesUnit'
 import { StatisticalAnalysisUnit } from './features/statisticalAnalysis/StatisticalAnalysisUnit'
 import { TuiUnit } from './features/tui/TuiUnit'
@@ -73,6 +75,10 @@ function App() {
         return <InterfaceTypesUnit />
       case 'cognition':
         return <CognitionUnit />
+      case 'psychology':
+        return <PsychologyUnit />
+      case 'heuristic-evaluation':
+        return <HeuristicEvaluationUnit />
       case 'statistical-analysis':
         return <StatisticalAnalysisUnit />
       case 'questionnaires':

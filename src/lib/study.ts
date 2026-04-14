@@ -5,6 +5,8 @@ export type UnitId =
   | 'usability'
   | 'interface-types'
   | 'cognition'
+  | 'psychology'
+  | 'heuristic-evaluation'
   | 'statistical-analysis'
   | 'questionnaires'
   | 'usability-analytical-evaluation'
@@ -48,6 +50,18 @@ export const UNIT_OPTIONS: UnitOption[] = [
     label: 'Cognition',
     implemented: true,
     questionCount: 25,
+  },
+  {
+    id: 'psychology',
+    label: 'Psychology',
+    implemented: false,
+    questionCount: 0,
+  },
+  {
+    id: 'heuristic-evaluation',
+    label: 'Heuristic Evaluation',
+    implemented: false,
+    questionCount: 0,
   },
   {
     id: 'statistical-analysis',
