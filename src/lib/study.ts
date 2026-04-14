@@ -68,8 +68,8 @@ export const UNIT_OPTIONS: UnitOption[] = [
   {
     id: 'task-centered-design',
     label: 'Task-Centered Design',
-    implemented: false,
-    questionCount: 0,
+    implemented: true,
+    questionCount: 25,
   },
   {
     id: 'visual-design-principles',

@@ -2,6 +2,13 @@ import { randomPick } from './random'
 import type { UnitId } from './study'
 import type { NetworkingQuestion } from '../features/networkingShared/networkingDrills'
 import {
+  generateTcdFoundationsQuestion,
+  generateTcdIdentificationQuestion,
+  generateTcdInterviewSurveyQuestion,
+  generateTcdRequirementsQuestion,
+  generateTcdTaskAnalysisQuestion,
+} from '../features/taskCenteredDesign/questions'
+import {
   generateDiscountHeQuestion,
   generateHeErrorTypeQuestion,
   generateHeFoundationsQuestion,
@@ -140,6 +147,13 @@ const EXAM_GENERATORS_BY_UNIT: Partial<Record<UnitId, Array<() => NetworkingQues
     generateHeWorkflowSeverityQuestion,
     generateNielsenHeuristicQuestion,
     generateHeErrorTypeQuestion,
+  ],
+  'task-centered-design': [
+    generateTcdFoundationsQuestion,
+    generateTcdIdentificationQuestion,
+    generateTcdTaskAnalysisQuestion,
+    generateTcdRequirementsQuestion,
+    generateTcdInterviewSurveyQuestion,
   ],
   'statistical-analysis': [
     generateControlledExperimentQuestion,
