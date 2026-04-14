@@ -254,13 +254,19 @@ export function NetworkingDrillPractice({
       )
     }
 
-    const rightOptions =
+    const rawRightOptions =
       matchOptionsOrder.length > 0
         ? matchOptionsOrder
         : question.pairs.map((pair) => pair.right)
+    const rightOptions = Array.from(new Set(rawRightOptions))
+    const optionsCanRepeat = rightOptions.length < question.pairs.length
     return (
       <div className="field">
-        <label>Match each strategy to the best description:</label>
+        <label>
+          {optionsCanRepeat
+            ? 'Match each item to the best category (options may be reused):'
+            : 'Match each strategy to the best description:'}
+        </label>
         <div className="table-scroll">
           <table className="compact-table">
             <thead>
@@ -284,8 +290,8 @@ export function NetworkingDrillPractice({
                       }
                     >
                       <option value="">Select...</option>
-                      {rightOptions.map((option) => (
-                        <option key={option} value={option}>
+                      {rightOptions.map((option, index) => (
+                        <option key={`${index}-${option}`} value={option}>
                           {option}
                         </option>
                       ))}
