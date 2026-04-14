@@ -17,6 +17,14 @@ import {
   generateLfpStoryboardQuestion,
 } from '../features/lowFidelityPrototypes/questions'
 import {
+  generateMfpFidelityComparisonQuestion,
+  generateMfpFoundationQuestion,
+  generateMfpPrototypeTypesQuestion,
+  generateMfpScriptedSimulationQuestion,
+  generateMfpToolsQuestion,
+  generateMfpWizardOfOzQuestion,
+} from '../features/mediumFidelityPrototypes/questions'
+import {
   generateTcdFoundationsQuestion,
   generateTcdIdentificationQuestion,
   generateTcdInterviewSurveyQuestion,
@@ -184,6 +192,14 @@ const EXAM_GENERATORS_BY_UNIT: Partial<Record<UnitId, Array<() => NetworkingQues
     generateLfpAlternativesQuestion,
     generateLfpStoryboardQuestion,
     generateLfpPitfallsQuestion,
+  ],
+  'medium-fidelity-prototypes': [
+    generateMfpFoundationQuestion,
+    generateMfpScriptedSimulationQuestion,
+    generateMfpWizardOfOzQuestion,
+    generateMfpFidelityComparisonQuestion,
+    generateMfpPrototypeTypesQuestion,
+    generateMfpToolsQuestion,
   ],
   'statistical-analysis': [
     generateControlledExperimentQuestion,

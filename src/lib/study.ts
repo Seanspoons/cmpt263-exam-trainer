@@ -88,8 +88,8 @@ export const UNIT_OPTIONS: UnitOption[] = [
   {
     id: 'medium-fidelity-prototypes',
     label: 'Medium-Fidelity Prototypes (MFP)',
-    implemented: false,
-    questionCount: 0,
+    implemented: true,
+    questionCount: 26,
   },
   {
     id: 'statistical-analysis',
