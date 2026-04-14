@@ -3,6 +3,8 @@ import type { ComponentType } from 'react'
 export type UnitId =
   | 'introduction-to-hci'
   | 'usability'
+  | 'interface-types'
+  | 'cognition'
   | 'statistical-analysis'
   | 'questionnaires'
   | 'usability-analytical-evaluation'
@@ -34,6 +36,18 @@ export const UNIT_OPTIONS: UnitOption[] = [
     label: 'Usability',
     implemented: true,
     questionCount: 20,
+  },
+  {
+    id: 'interface-types',
+    label: 'Interface Types',
+    implemented: false,
+    questionCount: 0,
+  },
+  {
+    id: 'cognition',
+    label: 'Cognition',
+    implemented: false,
+    questionCount: 0,
   },
   {
     id: 'statistical-analysis',
