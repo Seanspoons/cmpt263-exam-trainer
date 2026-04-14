@@ -10,6 +10,14 @@ import {
   generateWhatIsHciQuestion,
 } from '../features/introductionToHci/questions'
 import {
+  generateConsistencyAffordanceQuestion,
+  generateDesignPrinciplesQuestion,
+  generateScenarioPrinciplesQuestion,
+  generateUtilityUsefulQuestion,
+  generateUxGoalsQuestion,
+  generateWhatIsUsabilityQuestion,
+} from '../features/usability/questions'
+import {
   generateControlledExperimentQuestion,
   generateDescriptiveStatsQuestion,
   generateErrorsAssumptionsQuestion,
@@ -62,6 +70,14 @@ const EXAM_GENERATORS_BY_UNIT: Partial<Record<UnitId, Array<() => NetworkingQues
     generateUsefulUsableMeaningfulQuestion,
     generateGoodPoorDesignQuestion,
     generateIntroComparisonsQuestion,
+  ],
+  usability: [
+    generateWhatIsUsabilityQuestion,
+    generateUtilityUsefulQuestion,
+    generateUxGoalsQuestion,
+    generateDesignPrinciplesQuestion,
+    generateScenarioPrinciplesQuestion,
+    generateConsistencyAffordanceQuestion,
   ],
   'statistical-analysis': [
     generateControlledExperimentQuestion,

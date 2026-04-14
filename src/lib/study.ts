@@ -32,8 +32,8 @@ export const UNIT_OPTIONS: UnitOption[] = [
   {
     id: 'usability',
     label: 'Usability',
-    implemented: false,
-    questionCount: 0,
+    implemented: true,
+    questionCount: 20,
   },
   {
     id: 'statistical-analysis',
