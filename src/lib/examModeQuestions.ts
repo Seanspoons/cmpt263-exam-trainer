@@ -2,6 +2,14 @@ import { randomPick } from './random'
 import type { UnitId } from './study'
 import type { NetworkingQuestion } from '../features/networkingShared/networkingDrills'
 import {
+  generateGoodPoorDesignQuestion,
+  generateIntroComparisonsQuestion,
+  generateUiUxInteractionQuestion,
+  generateUsefulUsableMeaningfulQuestion,
+  generateUserCenteredDesignQuestion,
+  generateWhatIsHciQuestion,
+} from '../features/introductionToHci/questions'
+import {
   generateControlledExperimentQuestion,
   generateDescriptiveStatsQuestion,
   generateErrorsAssumptionsQuestion,
@@ -47,6 +55,14 @@ import {
 } from '../features/usabilityAnalyticalEvaluation/questions'
 
 const EXAM_GENERATORS_BY_UNIT: Partial<Record<UnitId, Array<() => NetworkingQuestion>>> = {
+  'introduction-to-hci': [
+    generateWhatIsHciQuestion,
+    generateUiUxInteractionQuestion,
+    generateUserCenteredDesignQuestion,
+    generateUsefulUsableMeaningfulQuestion,
+    generateGoodPoorDesignQuestion,
+    generateIntroComparisonsQuestion,
+  ],
   'statistical-analysis': [
     generateControlledExperimentQuestion,
     generateHypothesisQuestion,

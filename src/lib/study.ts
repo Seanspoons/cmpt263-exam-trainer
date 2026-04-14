@@ -26,8 +26,8 @@ export const UNIT_OPTIONS: UnitOption[] = [
   {
     id: 'introduction-to-hci',
     label: 'Introduction to HCI',
-    implemented: false,
-    questionCount: 0,
+    implemented: true,
+    questionCount: 18,
   },
   {
     id: 'usability',
