@@ -16,6 +16,7 @@ import { TuiUnit } from './features/tui/TuiUnit'
 import { CognitionUnit } from './features/cognition/CognitionUnit'
 import { UsabilityUnit } from './features/usability/UsabilityUnit'
 import { UsabilityAnalyticalEvaluationUnit } from './features/usabilityAnalyticalEvaluation/UsabilityAnalyticalEvaluationUnit'
+import { UsabilityEvaluationUnit } from './features/usabilityEvaluation/UsabilityEvaluationUnit'
 import { VisualDesignPrinciplesUnit } from './features/visualDesignPrinciples/VisualDesignPrinciplesUnit'
 import { SessionProgressPanel } from './components/SessionProgressPanel'
 import { ExamModePanel } from './components/ExamModePanel'
@@ -91,6 +92,8 @@ function App() {
         return <LowFidelityPrototypesUnit />
       case 'medium-fidelity-prototypes':
         return <MediumFidelityPrototypesUnit />
+      case 'usability-evaluation':
+        return <UsabilityEvaluationUnit />
       case 'statistical-analysis':
         return <StatisticalAnalysisUnit />
       case 'questionnaires':

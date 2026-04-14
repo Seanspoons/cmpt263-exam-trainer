@@ -11,6 +11,7 @@ export type UnitId =
   | 'visual-design-principles'
   | 'low-fidelity-prototypes'
   | 'medium-fidelity-prototypes'
+  | 'usability-evaluation'
   | 'statistical-analysis'
   | 'questionnaires'
   | 'usability-analytical-evaluation'
@@ -90,6 +91,12 @@ export const UNIT_OPTIONS: UnitOption[] = [
     label: 'Medium-Fidelity Prototypes (MFP)',
     implemented: true,
     questionCount: 26,
+  },
+  {
+    id: 'usability-evaluation',
+    label: 'Usability Evaluation',
+    implemented: false,
+    questionCount: 0,
   },
   {
     id: 'statistical-analysis',
