@@ -82,8 +82,8 @@ export const UNIT_OPTIONS: UnitOption[] = [
   {
     id: 'low-fidelity-prototypes',
     label: 'Low-Fidelity Prototypes (LFP)',
-    implemented: false,
-    questionCount: 0,
+    implemented: true,
+    questionCount: 25,
   },
   {
     id: 'medium-fidelity-prototypes',

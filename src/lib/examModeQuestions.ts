@@ -10,6 +10,13 @@ import {
   generateVdpSpacingGroupingQuestion,
 } from '../features/visualDesignPrinciples/questions'
 import {
+  generateLfpAlternativesQuestion,
+  generateLfpFoundationQuestion,
+  generateLfpPitfallsQuestion,
+  generateLfpSketchingQuestion,
+  generateLfpStoryboardQuestion,
+} from '../features/lowFidelityPrototypes/questions'
+import {
   generateTcdFoundationsQuestion,
   generateTcdIdentificationQuestion,
   generateTcdInterviewSurveyQuestion,
@@ -170,6 +177,13 @@ const EXAM_GENERATORS_BY_UNIT: Partial<Record<UnitId, Array<() => NetworkingQues
     generateVdpCrapQuestion,
     generateVdpHierarchyQuestion,
     generateVdpGestaltPlatformQuestion,
+  ],
+  'low-fidelity-prototypes': [
+    generateLfpFoundationQuestion,
+    generateLfpSketchingQuestion,
+    generateLfpAlternativesQuestion,
+    generateLfpStoryboardQuestion,
+    generateLfpPitfallsQuestion,
   ],
   'statistical-analysis': [
     generateControlledExperimentQuestion,
