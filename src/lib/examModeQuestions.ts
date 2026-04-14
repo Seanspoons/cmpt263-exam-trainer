@@ -25,7 +25,9 @@ import {
   generateMfpWizardOfOzQuestion,
 } from '../features/mediumFidelityPrototypes/questions'
 import {
+  generateUeAnalysisComparisonQuestion,
   generateUeFoundationQuestion,
+  generateUeQuestionnaireThinkAloudQuestion,
   generateUeTaskParticipantQuestion,
   generateUeTestingBasicsQuestion,
   generateUeTypesQuestion,
@@ -212,6 +214,8 @@ const EXAM_GENERATORS_BY_UNIT: Partial<Record<UnitId, Array<() => NetworkingQues
     generateUeTypesQuestion,
     generateUeTestingBasicsQuestion,
     generateUeTaskParticipantQuestion,
+    generateUeQuestionnaireThinkAloudQuestion,
+    generateUeAnalysisComparisonQuestion,
   ],
   'statistical-analysis': [
     generateControlledExperimentQuestion,

@@ -1,7 +1,9 @@
 import { UnitScaffold } from '../../components/UnitScaffold'
 import { NetworkingDrillPractice } from '../networkingShared/networkingDrills'
 import {
+  generateUeAnalysisComparisonQuestion,
   generateUeFoundationQuestion,
+  generateUeQuestionnaireThinkAloudQuestion,
   generateUeTaskParticipantQuestion,
   generateUeTestingBasicsQuestion,
   generateUeTypesQuestion,
@@ -53,6 +55,28 @@ export function UsabilityEvaluationUnit() {
               key="ue-tasks-participants"
               title="Usability Evaluation > Task Design and Participants"
               generateQuestion={generateUeTaskParticipantQuestion}
+            />
+          ),
+        },
+        {
+          id: 'questionnaires-think-aloud',
+          label: 'Questionnaires and Think-Aloud',
+          render: () => (
+            <NetworkingDrillPractice
+              key="ue-questionnaires-think-aloud"
+              title="Usability Evaluation > Questionnaires and Think-Aloud"
+              generateQuestion={generateUeQuestionnaireThinkAloudQuestion}
+            />
+          ),
+        },
+        {
+          id: 'analysis-comparison',
+          label: 'Observation, Analysis, Severity, and Comparison',
+          render: () => (
+            <NetworkingDrillPractice
+              key="ue-analysis-comparison"
+              title="Usability Evaluation > Observation, Analysis, Severity, and Comparison"
+              generateQuestion={generateUeAnalysisComparisonQuestion}
             />
           ),
         },

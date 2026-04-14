@@ -359,6 +359,257 @@ const TASK_PARTICIPANT_QUESTIONS: NetworkingQuestion[] = [
   },
 ]
 
+const QUESTIONNAIRE_THINK_ALOUD_QUESTIONS: NetworkingQuestion[] = [
+  {
+    id: 'ue-questionnaire-demographics',
+    kind: 'match',
+    prompt: 'Match each questionnaire element to a typical example.',
+    pairs: [
+      { left: 'Demographic question', right: 'Age range, inclusive gender options, or experience level' },
+      { left: 'Likert scale', right: 'Agreement or rating scale with points such as 5 or 7' },
+      { left: 'Semantic scale', right: 'Rating between opposite adjectives or qualities' },
+      { left: 'Open-ended question', right: 'Free-text response that captures richer comments' },
+    ],
+    explanationSteps: [
+      'Usability evaluation often uses questionnaires before or after tasks.',
+      'Demographics and experience help interpret the results.',
+      'Open-ended items add qualitative insight that scales alone may miss.',
+    ],
+    conceptSummary: 'Questionnaires can collect demographics, scaled ratings, and open-ended feedback.',
+  },
+  {
+    id: 'ue-standard-questionnaires',
+    kind: 'mcq',
+    prompt: 'Which set contains standard questionnaires or scales commonly used in usability evaluation?',
+    options: [
+      'SUS, QUIS, UEQ, and NASA-TLX',
+      'GOMS, KLM, and Fitts’ Law only',
+      'TCPS 2 and Stanford Prison Experiment',
+      'Balsamiq and Figma',
+    ],
+    correctOption: 0,
+    explanationSteps: [
+      'These are standard post-task or post-study measurement instruments.',
+      'They collect structured subjective data rather than inspect the interface directly.',
+      'Knowing the names is common exam material.',
+    ],
+    conceptSummary: 'SUS, QUIS, UEQ, and NASA-TLX are standard evaluation questionnaires or scales.',
+  },
+  {
+    id: 'ue-leading-question',
+    kind: 'mcq',
+    prompt: 'Which questionnaire item is a leading question?',
+    options: [
+      'Did you enjoy our excellent new interface?',
+      'How easy or difficult was the task for you?',
+      'What, if anything, was confusing about checkout?',
+      'Describe one part of the flow you would improve.',
+    ],
+    correctOption: 0,
+    explanationSteps: [
+      'Leading questions bias the participant toward a preferred answer.',
+      'Neutral wording is important in usability evaluation.',
+      'Open-ended, concise questions are usually safer.',
+    ],
+    conceptSummary: 'Leading questions bias responses and should be avoided.',
+  },
+  {
+    id: 'ue-think-aloud-definition',
+    kind: 'text',
+    prompt: 'What is think-aloud protocol?',
+    requiredConcepts: [
+      { label: 'Verbalize thoughts', keywords: ['verbalize', 'say thoughts', 'speak thoughts'] },
+      { label: 'While using the system', keywords: ['while using system', 'during interaction', 'while performing task'] },
+    ],
+    answerDisplay:
+      'Think-aloud protocol is when users verbalize their thoughts while they are interacting with the system during tasks.',
+    explanationSteps: [
+      'Think-aloud is one of the most valuable usability testing techniques.',
+      'It helps reveal expectations, confusion, and interpretations that observation alone may miss.',
+      'The facilitator should not turn it into a leading conversation.',
+    ],
+    conceptSummary: 'Think-aloud captures participants’ thoughts during interaction.',
+  },
+  {
+    id: 'ue-think-aloud-tradeoffs',
+    kind: 'match',
+    prompt: 'Match each think-aloud characteristic to whether it is a benefit or downside.',
+    pairs: [
+      { left: 'Cheap and flexible', right: 'Benefit' },
+      { left: 'Insightful and easy to use', right: 'Benefit' },
+      { left: 'Unnatural and sometimes filtered', right: 'Downside' },
+      { left: 'Can introduce bias', right: 'Downside' },
+    ],
+    explanationSteps: [
+      'Think-aloud is widely used because it is practical and revealing.',
+      'Its weaknesses come from the fact that speaking during action is not fully natural.',
+      'Facilitator behavior can also distort what participants say.',
+    ],
+    conceptSummary: 'Think-aloud is valuable but can feel unnatural and can be biased.',
+  },
+  {
+    id: 'ue-think-aloud-prompts',
+    kind: 'mcq',
+    prompt: 'Which facilitator prompt best fits think-aloud best practice?',
+    options: [
+      'What are you thinking right now?',
+      'Don’t you think that button is obviously the right one?',
+      'You should probably open settings next, right?',
+      'Can you confirm that our design is intuitive?',
+    ],
+    correctOption: 0,
+    explanationSteps: [
+      'Good think-aloud prompts are neutral and non-leading.',
+      'The facilitator should encourage speaking without steering the user.',
+      'The other options bias the participant.',
+    ],
+    conceptSummary: 'Think-aloud prompting should be neutral rather than leading.',
+  },
+]
+
+const ANALYSIS_COMPARISON_QUESTIONS: NetworkingQuestion[] = [
+  {
+    id: 'ue-observation-data',
+    kind: 'mcq',
+    prompt: 'When observing a usability session, what kinds of things should the evaluator look for?',
+    options: [
+      'Breakdowns, confusion, workarounds, and success or failure patterns',
+      'Only whether the participant smiles',
+      'Only the participant’s age',
+      'Only the color palette of the interface',
+    ],
+    correctOption: 0,
+    explanationSteps: [
+      'Observation is about behavior, not just final outcomes.',
+      'Workarounds and hesitation often reveal design problems.',
+      'Sessions can be recorded with consent using notes or audio/video.',
+    ],
+    conceptSummary: 'Observation should capture breakdowns, confusion, workarounds, and outcomes.',
+  },
+  {
+    id: 'ue-qualitative-definition',
+    kind: 'text',
+    prompt: 'What is qualitative data in usability evaluation?',
+    requiredConcepts: [
+      { label: 'Observations and feedback', keywords: ['observations', 'feedback', 'comments'] },
+      { label: 'Insights or themes', keywords: ['insight', 'themes', 'patterns'] },
+    ],
+    answerDisplay:
+      'Qualitative data includes observations, comments, and feedback that help reveal themes, patterns, and insights.',
+    explanationSteps: [
+      'Qualitative data helps explain what happened and why.',
+      'It often comes from observations, open-ended responses, and discussion.',
+      'Affinity diagramming is a common way to organize it into themes.',
+    ],
+    conceptSummary: 'Qualitative data provides thematic insight from observations and feedback.',
+  },
+  {
+    id: 'ue-quantitative-definition',
+    kind: 'text',
+    prompt: 'What is quantitative data in usability evaluation?',
+    requiredConcepts: [
+      { label: 'Numbers or metrics', keywords: ['numbers', 'metrics', 'numerical'] },
+      { label: 'Time or error rate', keywords: ['time', 'error rate', 'completion time'] },
+    ],
+    answerDisplay:
+      'Quantitative data is numerical measurement data such as task completion time, error rates, and questionnaire scores.',
+    explanationSteps: [
+      'Quantitative data turns performance or ratings into numbers.',
+      'This makes comparison easier across participants or versions.',
+      'It is especially common in summative evaluation.',
+    ],
+    conceptSummary: 'Quantitative data uses numbers such as time, errors, and scores.',
+  },
+  {
+    id: 'ue-affinity-diagramming',
+    kind: 'mcq',
+    prompt: 'Which analysis activity is most clearly qualitative?',
+    options: [
+      'Grouping observations into themes with affinity diagramming',
+      'Calculating average completion time',
+      'Computing error percentages',
+      'Counting how many users finished the task',
+    ],
+    correctOption: 0,
+    explanationSteps: [
+      'Affinity diagramming is used to cluster observations and comments into themes.',
+      'That makes it a qualitative analysis technique.',
+      'The other options are numerical measures.',
+    ],
+    conceptSummary: 'Affinity diagramming is a qualitative way to organize findings into themes.',
+  },
+  {
+    id: 'ue-severity',
+    kind: 'match',
+    prompt: 'Match each severity concept to its description.',
+    pairs: [
+      { left: 'Frequency', right: 'How often the problem occurs' },
+      { left: 'Damage', right: 'How harmful the problem is when it happens' },
+      { left: 'Ignorable', right: 'Low-priority issue with minimal impact' },
+      { left: 'Catastrophic', right: 'Very serious issue that should be fixed urgently' },
+    ],
+    explanationSteps: [
+      'This lecture version simplifies severity around frequency and damage.',
+      'Severity helps prioritize which findings to address first.',
+      'It should inform redesign recommendations, not replace judgment.',
+    ],
+    conceptSummary: 'Severity combines how often a problem happens with how damaging it is.',
+  },
+  {
+    id: 'ue-results-use',
+    kind: 'mcq',
+    prompt: 'What should teams do with usability evaluation results?',
+    options: [
+      'Use severity to prioritize fixes, redesign based on findings, and also note what already works well',
+      'Treat findings as strict unquestionable rules',
+      'Ignore successful parts of the design',
+      'Discard all user suggestions automatically',
+    ],
+    correctOption: 0,
+    explanationSteps: [
+      'Recommendations should guide redesign rather than function as rigid laws.',
+      'Good reports include strengths as well as weaknesses.',
+      'Findings can also inspire better alternatives.',
+    ],
+    conceptSummary: 'Use findings to prioritize fixes, redesign, and preserve strengths.',
+  },
+  {
+    id: 'ue-heuristic-vs-testing',
+    kind: 'text',
+    prompt: 'What is the difference between heuristic evaluation and usability testing?',
+    requiredConcepts: [
+      { label: 'Experts and no users', keywords: ['experts', 'no users', 'without users'] },
+      { label: 'Real users and behavior', keywords: ['real users', 'actual behaviour', 'actual behavior'] },
+    ],
+    answerDisplay:
+      'Heuristic evaluation is done by experts without real users, while usability testing uses real users so it can reveal actual behavior and more realistic problems.',
+    explanationSteps: [
+      'Heuristic evaluation is faster and often done in one or two hours.',
+      'Usability testing is slower but gives stronger evidence about real use.',
+      'The best practice is often to use both together.',
+    ],
+    conceptSummary: 'Heuristics are expert-based; usability testing is behavior-based with real users.',
+  },
+  {
+    id: 'ue-validity-ethics',
+    kind: 'mcq',
+    prompt: 'Which option best captures common validity and ethics concerns in usability evaluation?',
+    options: [
+      'Bias, environment, and the Hawthorne effect matter, and participants should be protected from harm with their identity respected',
+      'Validity is automatic if the interface looks polished',
+      'Ethics matters only in medical studies, not usability work',
+      'Observation always removes bias completely',
+    ],
+    correctOption: 0,
+    explanationSteps: [
+      'People may behave differently when observed, and the environment can affect results.',
+      'Better design, more participants, and better control can improve validity.',
+      'Ethically, participants should be treated well and their identity protected.',
+    ],
+    conceptSummary: 'Usability evaluation must consider validity threats and participant ethics.',
+  },
+]
+
 export function generateUeFoundationQuestion(): NetworkingQuestion {
   return randomPick(FOUNDATIONS_QUESTIONS)
 }
@@ -373,4 +624,12 @@ export function generateUeTestingBasicsQuestion(): NetworkingQuestion {
 
 export function generateUeTaskParticipantQuestion(): NetworkingQuestion {
   return randomPick(TASK_PARTICIPANT_QUESTIONS)
+}
+
+export function generateUeQuestionnaireThinkAloudQuestion(): NetworkingQuestion {
+  return randomPick(QUESTIONNAIRE_THINK_ALOUD_QUESTIONS)
+}
+
+export function generateUeAnalysisComparisonQuestion(): NetworkingQuestion {
+  return randomPick(ANALYSIS_COMPARISON_QUESTIONS)
 }
