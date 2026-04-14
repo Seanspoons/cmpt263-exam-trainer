@@ -2,6 +2,14 @@ import { randomPick } from './random'
 import type { UnitId } from './study'
 import type { NetworkingQuestion } from '../features/networkingShared/networkingDrills'
 import {
+  generateVdpCrapQuestion,
+  generateVdpFoundationsQuestion,
+  generateVdpGestaltPlatformQuestion,
+  generateVdpHierarchyQuestion,
+  generateVdpSimplicityQuestion,
+  generateVdpSpacingGroupingQuestion,
+} from '../features/visualDesignPrinciples/questions'
+import {
   generateTcdFoundationsQuestion,
   generateTcdIdentificationQuestion,
   generateTcdInterviewSurveyQuestion,
@@ -154,6 +162,14 @@ const EXAM_GENERATORS_BY_UNIT: Partial<Record<UnitId, Array<() => NetworkingQues
     generateTcdTaskAnalysisQuestion,
     generateTcdRequirementsQuestion,
     generateTcdInterviewSurveyQuestion,
+  ],
+  'visual-design-principles': [
+    generateVdpFoundationsQuestion,
+    generateVdpSpacingGroupingQuestion,
+    generateVdpSimplicityQuestion,
+    generateVdpCrapQuestion,
+    generateVdpHierarchyQuestion,
+    generateVdpGestaltPlatformQuestion,
   ],
   'statistical-analysis': [
     generateControlledExperimentQuestion,

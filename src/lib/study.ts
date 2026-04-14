@@ -74,8 +74,8 @@ export const UNIT_OPTIONS: UnitOption[] = [
   {
     id: 'visual-design-principles',
     label: 'Visual Design Principles',
-    implemented: false,
-    questionCount: 0,
+    implemented: true,
+    questionCount: 24,
   },
   {
     id: 'statistical-analysis',
