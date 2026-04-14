@@ -2,6 +2,14 @@ import { randomPick } from './random'
 import type { UnitId } from './study'
 import type { NetworkingQuestion } from '../features/networkingShared/networkingDrills'
 import {
+  generateCliGuiQuestion,
+  generateEmergingInterfaceQuestion,
+  generateInterfaceFoundationsQuestion,
+  generateTouchMobileQuestion,
+  generateTuiTaskSelectionQuestion,
+  generateWimpQuestion,
+} from '../features/interfaceTypes/questions'
+import {
   generateGoodPoorDesignQuestion,
   generateIntroComparisonsQuestion,
   generateUiUxInteractionQuestion,
@@ -78,6 +86,14 @@ const EXAM_GENERATORS_BY_UNIT: Partial<Record<UnitId, Array<() => NetworkingQues
     generateDesignPrinciplesQuestion,
     generateScenarioPrinciplesQuestion,
     generateConsistencyAffordanceQuestion,
+  ],
+  'interface-types': [
+    generateInterfaceFoundationsQuestion,
+    generateCliGuiQuestion,
+    generateWimpQuestion,
+    generateTouchMobileQuestion,
+    generateEmergingInterfaceQuestion,
+    generateTuiTaskSelectionQuestion,
   ],
   'statistical-analysis': [
     generateControlledExperimentQuestion,

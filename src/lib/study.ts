@@ -40,8 +40,8 @@ export const UNIT_OPTIONS: UnitOption[] = [
   {
     id: 'interface-types',
     label: 'Interface Types',
-    implemented: false,
-    questionCount: 0,
+    implemented: true,
+    questionCount: 22,
   },
   {
     id: 'cognition',
