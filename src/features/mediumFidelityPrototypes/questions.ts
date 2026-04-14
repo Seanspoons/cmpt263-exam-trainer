@@ -25,9 +25,9 @@ const FOUNDATIONS_QUESTIONS: NetworkingQuestion[] = [
     prompt: 'What are medium-fidelity prototypes mainly used for in the lecture?',
     options: [
       'Fine-tuning interface design and supporting heuristic evaluation or usability testing',
-      'Replacing all final implementation work',
-      'Avoiding redesign after feedback',
-      'Only creating artistic concept posters',
+      'Replacing all final implementation work and production engineering',
+      'Avoiding redesign even after evaluation reveals real problems',
+      'Only creating artistic concept posters for stakeholder presentations',
     ],
     correctOption: 0,
     explanationSteps: [
@@ -59,9 +59,9 @@ const FOUNDATIONS_QUESTIONS: NetworkingQuestion[] = [
     prompt: 'Why do medium-fidelity prototypes often support only a few versions or scenarios?',
     options: [
       'Because they usually narrow down to a few promising directions and specific walkthroughs',
-      'Because medium fidelity forbids user input',
-      'Because they must model the entire final system in full',
-      'Because rough sketches are more detailed',
+      'Because medium fidelity forbids real user input or interaction entirely',
+      'Because they must model the entire final system in full detail',
+      'Because rough sketches are usually more detailed than medium fidelity',
     ],
     correctOption: 0,
     explanationSteps: [
@@ -110,9 +110,9 @@ const SCRIPTED_SIMULATION_QUESTIONS: NetworkingQuestion[] = [
     prompt: 'Why can scripted simulations feel broken when the participant goes off-script?',
     options: [
       'Because the prototype was built to support a narrow predefined task rather than every possible action',
-      'Because all medium-fidelity prototypes ban interactivity',
-      'Because the user should never touch the interface',
-      'Because the final system is already complete',
+      'Because all medium-fidelity prototypes completely ban interactivity',
+      'Because the user should never touch the prototype interface directly',
+      'Because the final production system is already complete and fixed',
     ],
     correctOption: 0,
     explanationSteps: [
@@ -197,9 +197,9 @@ const WIZARD_OF_OZ_QUESTIONS: NetworkingQuestion[] = [
     prompt: 'Which requirement matters most for Wizard of Oz to work as intended?',
     options: [
       'The interaction should feel authentic and the participant should not know it is being faked',
-      'The participant should watch the wizard operating the system',
-      'The system must be fully implemented already',
-      'The prototype should avoid any response to user actions',
+      'The participant should watch the wizard operating the system openly',
+      'The system must already be fully implemented before testing begins',
+      'The prototype should avoid responding to user actions during the study',
     ],
     correctOption: 0,
     explanationSteps: [
@@ -218,9 +218,9 @@ const FIDELITY_COMPARISON_QUESTIONS: NetworkingQuestion[] = [
     prompt: 'Which description best matches a high-fidelity prototype?',
     options: [
       'A prototype that nearly looks and behaves like the final design',
-      'A rough hand-drawn concept with no automation',
-      'A method with no interface representation',
-      'A requirements document only',
+      'A rough hand-drawn concept with no automation or realistic behavior',
+      'A method with no interface representation or interaction surface',
+      'A requirements document used without any prototype representation',
     ],
     correctOption: 0,
     explanationSteps: [

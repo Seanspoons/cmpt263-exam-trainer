@@ -8,9 +8,9 @@ const FOUNDATIONS_QUESTIONS: NetworkingQuestion[] = [
     prompt: 'What is the lecture’s reminder about user-centered design before task-centered design begins?',
     options: [
       'It is iterative and focuses on users and their needs in each phase',
-      'It happens only after implementation',
-      'It avoids evaluation entirely',
-      'It is only about visual styling',
+      'It happens only after implementation has already been finished',
+      'It avoids evaluation entirely until the system is complete',
+      'It is only about visual styling and surface presentation choices',
     ],
     correctOption: 0,
     explanationSteps: [
@@ -43,9 +43,9 @@ const FOUNDATIONS_QUESTIONS: NetworkingQuestion[] = [
     prompt: 'Why is getting requirements right especially important?',
     options: [
       'Because different people interpret designs differently',
-      'Because requirements never change',
-      'Because prototypes replace requirements',
-      'Because users always agree with each other',
+      'Because requirements never change once they are first written',
+      'Because prototypes fully replace requirements and make them unnecessary',
+      'Because users always agree with each other about what they need',
     ],
     correctOption: 0,
     explanationSteps: [
@@ -97,9 +97,9 @@ const IDENTIFICATION_QUESTIONS: NetworkingQuestion[] = [
     prompt: 'Which set best matches the lecture’s user characteristics?',
     options: [
       'Ability, background, and attitude to computers',
-      'Favorite font, favorite color, and salary only',
-      'Only age and gender',
-      'Only device ownership',
+      'Favorite font, favorite color, and salary only as user traits',
+      'Only age and gender, without skills or background information',
+      'Only device ownership, without any attitudes or ability differences',
     ],
     correctOption: 0,
     explanationSteps: [
@@ -132,9 +132,9 @@ const IDENTIFICATION_QUESTIONS: NetworkingQuestion[] = [
     prompt: 'What is the best way to learn about users and tasks according to the lecture?',
     options: [
       'Direct contact with users when possible',
-      'Assuming users and tasks without later verification',
-      'Only reading internal company reports',
-      'Ignoring unusual or extreme users',
+      'Assuming users and tasks without any later verification step',
+      'Only reading internal company reports about the product team',
+      'Ignoring unusual or extreme users during early design research',
     ],
     correctOption: 0,
     explanationSteps: [
@@ -221,9 +221,9 @@ const TASK_ANALYSIS_PERSONAS_QUESTIONS: NetworkingQuestion[] = [
     prompt: 'What does task evaluation mean in this lecture?',
     options: [
       'Circulating task descriptions to users for omissions, corrections, clarifications, and suggestions',
-      'Ranking fonts by popularity',
-      'Building final prototypes immediately',
-      'Ignoring user feedback to avoid bias',
+      'Ranking fonts by popularity across the design team members',
+      'Building final prototypes immediately without checking task stories',
+      'Ignoring user feedback so the evaluation cannot become biased',
     ],
     correctOption: 0,
     explanationSteps: [

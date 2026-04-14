@@ -8,9 +8,9 @@ const BASICS_QUESTIONS: NetworkingQuestion[] = [
     prompt: 'Why are questionnaires commonly used in usability testing?',
     options: [
       'They capture structured participant perceptions efficiently',
-      'They replace all task observation',
-      'They automatically prove causation',
-      'They eliminate the need for descriptive statistics',
+      'They replace all task observation and behavioral study evidence',
+      'They automatically prove causation between interface features and outcomes',
+      'They eliminate the need for descriptive statistics and interpretation',
     ],
     correctOption: 0,
     explanationSteps: [
@@ -44,9 +44,9 @@ const BASICS_QUESTIONS: NetworkingQuestion[] = [
     prompt: 'Why might a team prefer a standard questionnaire over inventing one from scratch?',
     options: [
       'It supports comparability and established interpretation',
-      'It guarantees perfect results',
-      'It removes the need to recruit participants',
-      'It automatically measures every possible construct',
+      'It guarantees perfect results and fully objective responses',
+      'It removes the need to recruit participants for the study',
+      'It automatically measures every possible construct a team might want',
     ],
     correctOption: 0,
     explanationSteps: [
@@ -202,9 +202,9 @@ const INTERPRETATION_QUESTIONS: NetworkingQuestion[] = [
       'A UEQ benchmark shows a product scoring well below average on Efficiency. What does that imply?',
     options: [
       'Users may perceive the product as weaker than typical products on task efficiency',
-      'The product is statistically significant',
-      'No interpretation is possible',
-      'It means the median equals the mode',
+      'The product is statistically significant on the Efficiency scale',
+      'No interpretation is possible from a benchmark comparison result',
+      'It means the questionnaire median equals the mode exactly',
     ],
     correctOption: 0,
     explanationSteps: [

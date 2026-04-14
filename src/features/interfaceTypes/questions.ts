@@ -47,9 +47,9 @@ const FOUNDATIONS_QUESTIONS: NetworkingQuestion[] = [
     prompt: 'What is the key design takeaway when working across interface types?',
     options: [
       'Focus on user tasks for the platform rather than copying a desktop/web app directly',
-      'Always copy the desktop design exactly',
-      'Choose the most novel interface regardless of task',
-      'Ignore platform constraints if the brand is strong',
+      'Always copy the desktop design exactly across every form factor',
+      'Choose the most novel interface style regardless of the task',
+      'Ignore platform constraints if the brand identity is strong enough',
     ],
     correctOption: 0,
     explanationSteps: [
@@ -102,9 +102,9 @@ const CLI_GUI_QUESTIONS: NetworkingQuestion[] = [
     prompt: 'Which statement best describes a GUI?',
     options: [
       'Users control input, storage, and output through graphical elements on a screen',
-      'Users interact only through typed shell commands',
-      'It always requires voice as the main modality',
-      'It is defined by physical object manipulation only',
+      'Users interact only through typed shell commands and syntax recall',
+      'It always requires voice input as the main interaction modality',
+      'It is defined only by physical object manipulation in the world',
     ],
     correctOption: 0,
     explanationSteps: [
@@ -226,9 +226,9 @@ const TOUCH_MOBILE_QUESTIONS: NetworkingQuestion[] = [
     prompt: 'Which statement best describes touch screens?',
     options: [
       'They provide more direct interaction, but precision and mapping remain design issues',
-      'They remove all need for icons and menus',
-      'They eliminate pointing precision concerns',
-      'They are identical to command-line interaction',
+      'They remove all need for icons, menus, and other visual controls',
+      'They eliminate pointing precision concerns because touch is exact',
+      'They are effectively identical to command-line interaction styles',
     ],
     correctOption: 0,
     explanationSteps: [
@@ -261,9 +261,9 @@ const TOUCH_MOBILE_QUESTIONS: NetworkingQuestion[] = [
     prompt: 'Which mobile design practice best matches the lecture?',
     options: [
       'Show only the information and actions needed for the immediate task',
-      'Expose every possible feature on the first screen',
-      'Copy desktop navigation depth exactly',
-      'Remove undo so users commit faster',
+      'Expose every possible feature on the first mobile screen at once',
+      'Copy desktop navigation depth and layout density exactly on mobile',
+      'Remove undo so users commit faster and cannot change their mind',
     ],
     correctOption: 0,
     explanationSteps: [
@@ -299,9 +299,9 @@ const EMERGING_INTERFACE_QUESTIONS: NetworkingQuestion[] = [
     prompt: 'Which statement best fits wearable interfaces?',
     options: [
       'They are on-body and often have tiny or no screens, making them always available but limited in interactivity',
-      'They replace the physical world completely',
-      'They are defined by large desktop windows',
-      'They eliminate privacy concerns',
+      'They replace the physical world completely with immersive virtual scenes',
+      'They are mainly defined by large desktop windows and overlapping panels',
+      'They eliminate privacy concerns because they stay close to the body',
     ],
     correctOption: 0,
     explanationSteps: [

@@ -8,9 +8,9 @@ const FOUNDATIONS_QUESTIONS: NetworkingQuestion[] = [
     prompt: 'What is a tangible user interface (TUI)?',
     options: [
       'A system where digital information or control is represented through physical artifacts',
-      'A questionnaire completed with pen and paper',
-      'Any interface with a touchscreen',
-      'A statistics dashboard for usability studies',
+      'A questionnaire completed with pen and paper in a classroom',
+      'Any interface that includes a touchscreen display surface',
+      'A statistics dashboard used to summarize usability study metrics',
     ],
     correctOption: 0,
     explanationSteps: [
@@ -55,9 +55,9 @@ const CORE_CONCEPT_QUESTIONS: NetworkingQuestion[] = [
     prompt: 'What does Radical Atoms aim to push toward?',
     options: [
       'Physical materials that can dynamically embody digital information and form',
-      'Smaller questionnaire scales',
-      'Only faster mouse pointing',
-      'Removing physicality from interfaces entirely',
+      'Smaller questionnaire scales for faster post-study measurement',
+      'Only faster mouse pointing and target acquisition performance',
+      'Removing physicality from interfaces entirely in future systems',
     ],
     correctOption: 0,
     explanationSteps: [
@@ -73,9 +73,9 @@ const CORE_CONCEPT_QUESTIONS: NetworkingQuestion[] = [
     prompt: 'What are epistemic actions in the context of TUI?',
     options: [
       'Physical actions that help people think, understand, or simplify a problem',
-      'Actions used only to submit questionnaire results',
-      'Hidden actions that manipulate users',
-      'Keyboard shortcuts for expert users only',
+      'Actions used only to submit questionnaire results after testing',
+      'Hidden actions that manipulate users into unwanted decisions',
+      'Keyboard shortcuts designed only for expert desktop users',
     ],
     correctOption: 0,
     explanationSteps: [

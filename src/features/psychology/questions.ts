@@ -8,9 +8,9 @@ const MEMORY_LEARNING_QUESTIONS: NetworkingQuestion[] = [
     prompt: 'Which statement best matches the lecture review of memory?',
     options: [
       'Memory involves encoding and retrieving knowledge, both of which may involve losses',
-      'Memory is perfect once information is seen once',
-      'Retrieval never depends on context',
-      'Recognition is harder than recall',
+      'Memory becomes perfect once information has been seen a single time',
+      'Retrieval never depends on context or surrounding cues at all',
+      'Recognition is generally harder than recall for interface users',
     ],
     correctOption: 0,
     explanationSteps: [
@@ -111,9 +111,9 @@ const TRANSFER_MENTAL_MODEL_QUESTIONS: NetworkingQuestion[] = [
     prompt: 'Which statement best describes mental models in the lecture?',
     options: [
       'They are formed from fragmentary evidence and reinforced by positive feedback, even when inaccurate',
-      'They are always complete and technically correct',
-      'They only belong to designers, not users',
-      'They are identical to source code architecture',
+      'They are always complete, consistent, and technically correct explanations',
+      'They belong only to designers and do not really apply to users',
+      'They are identical to the system’s internal source code architecture',
     ],
     correctOption: 0,
     explanationSteps: [
@@ -167,9 +167,9 @@ const METAPHOR_QUESTIONS: NetworkingQuestion[] = [
     prompt: 'Why are metaphors used in interface design?',
     options: [
       'To help users understand complex or novel things through familiar concepts',
-      'To remove all need for conceptual models',
-      'To make interfaces look artistic only',
-      'To guarantee no false expectations occur',
+      'To remove all need for conceptual models or other explanations',
+      'To make interfaces look artistic without affecting understanding',
+      'To guarantee that no false expectations or confusion will occur',
     ],
     correctOption: 0,
     explanationSteps: [
@@ -285,9 +285,9 @@ const ACTION_GULFS_QUESTIONS: NetworkingQuestion[] = [
     prompt: 'A cycle starts from an external event rather than a user goal. Which lecture point does this reflect?',
     options: [
       'The action cycle can also start from the world and may repeat multiple times',
-      'The action cycle only starts from explicit goals',
-      'Evaluation must always come before execution',
-      'The cycle cannot include unconscious stages',
+      'The action cycle only starts from explicit user goals and intentions',
+      'Evaluation must always come before execution in a strict fixed order',
+      'The cycle cannot include unconscious stages or repeated loops',
     ],
     correctOption: 0,
     explanationSteps: [
@@ -402,9 +402,9 @@ const PRINCIPLES_QUESTIONS: NetworkingQuestion[] = [
     prompt: 'What is a conceptual model?',
     options: [
       'A simplified explanation of how something works that helps users predict behavior and recover from problems',
-      'A pixel-perfect visual mockup only',
-      'The same thing as source code',
-      'A severity score for usability issues',
+      'A pixel-perfect visual mockup with no role in understanding behavior',
+      'The same thing as the system’s source code and architecture',
+      'A severity score used to prioritize usability issues in reports',
     ],
     correctOption: 0,
     explanationSteps: [

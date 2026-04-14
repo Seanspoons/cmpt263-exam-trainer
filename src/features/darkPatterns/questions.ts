@@ -25,9 +25,9 @@ const FOUNDATIONS_QUESTIONS: NetworkingQuestion[] = [
     prompt: 'Why are dark patterns considered harmful?',
     options: [
       'They exploit psychology to manipulate choices and undermine autonomy',
-      'They always increase accessibility',
-      'They make all interfaces simpler',
-      'They guarantee informed consent',
+      'They always increase accessibility and inclusive user control',
+      'They make all interfaces simpler and easier to understand',
+      'They guarantee informed consent before any important choice',
     ],
     correctOption: 0,
     explanationSteps: [
@@ -43,9 +43,9 @@ const FOUNDATIONS_QUESTIONS: NetworkingQuestion[] = [
     prompt: 'How is infinite scrolling often discussed in this unit?',
     options: [
       'As a related engagement trick that can keep users consuming more than intended',
-      'As a required accessibility feature',
-      'As a type of paired t-test',
-      'As a benchmark questionnaire scale',
+      'As a required accessibility feature for long content feeds',
+      'As a type of paired t-test used in statistical analysis',
+      'As a benchmark questionnaire scale in post-study surveys',
     ],
     correctOption: 0,
     explanationSteps: [

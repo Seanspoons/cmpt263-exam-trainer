@@ -8,9 +8,9 @@ const FOUNDATIONS_QUESTIONS: NetworkingQuestion[] = [
     prompt: 'Why does evaluation matter in interface design?',
     options: [
       'Because users care not only whether a system works, but how well it works, and pre-launch discovery is cheaper',
-      'Because evaluation is only needed after launch',
-      'Because working code guarantees a good user experience',
-      'Because evaluation is only about visual style',
+      'Because evaluation is only needed after launch and public release',
+      'Because working code automatically guarantees a good user experience',
+      'Because evaluation is only about visual style and surface polish',
     ],
     correctOption: 0,
     explanationSteps: [
@@ -26,9 +26,9 @@ const FOUNDATIONS_QUESTIONS: NetworkingQuestion[] = [
     prompt: 'How does evaluation fit into user-centered design?',
     options: [
       'As an iterative stage used throughout the design process',
-      'Only as a one-time final approval step',
-      'Only after shipping to the public',
-      'It does not belong in user-centered design',
+      'Only as a one-time final approval step before release',
+      'Only after shipping the product to the public market',
+      'It does not really belong in user-centered design workflows',
     ],
     correctOption: 0,
     explanationSteps: [
@@ -80,9 +80,9 @@ const DISCOUNT_HE_QUESTIONS: NetworkingQuestion[] = [
     prompt: 'What does Nielsen’s discount usability idea emphasize?',
     options: [
       'Something is better than nothing: use lighter-weight, practical evaluation methods',
-      'Only large expensive studies are valid',
-      'Evaluation should avoid prototypes',
-      'Heuristic evaluation requires many end users',
+      'Only large expensive studies are valid enough to be worth doing',
+      'Evaluation should avoid prototypes and wait for final products',
+      'Heuristic evaluation requires many end users in every session',
     ],
     correctOption: 0,
     explanationSteps: [
@@ -128,9 +128,9 @@ const DISCOUNT_HE_QUESTIONS: NetworkingQuestion[] = [
     prompt: 'Which statement about evaluators is correct?',
     options: [
       'No single evaluator finds everything; easy problems are found by many and hard problems by few',
-      'One evaluator is enough to find all important issues',
-      'Hard problems are always found by everyone',
-      'Evaluator count does not affect findings',
+      'One evaluator is enough to find essentially all important issues',
+      'Hard problems are usually found by every evaluator in the group',
+      'Evaluator count does not meaningfully affect the findings at all',
     ],
     correctOption: 0,
     explanationSteps: [
@@ -218,9 +218,9 @@ const WORKFLOW_SEVERITY_QUESTIONS: NetworkingQuestion[] = [
     prompt: 'What best describes the debriefing stage of heuristic evaluation?',
     options: [
       'Evaluators, observers, and the dev team discuss findings and improvements in a brainstorming-style session',
-      'Only one evaluator silently submits a final number',
-      'Users perform think-aloud tasks in the lab',
-      'The team immediately rewrites the app before discussing issues',
+      'Only one evaluator silently submits a final severity number',
+      'Users perform think-aloud tasks in the lab during debriefing',
+      'The team immediately rewrites the app before discussing any issues',
     ],
     correctOption: 0,
     explanationSteps: [

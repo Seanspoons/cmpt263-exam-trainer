@@ -26,8 +26,8 @@ const OVERVIEW_QUESTIONS: NetworkingQuestion[] = [
     options: [
       'Cognitive walkthrough is task-specific and learnability-focused; heuristic evaluation checks broader heuristics',
       'Cognitive walkthrough uses end-users while heuristic evaluation uses experts only',
-      'Heuristic evaluation requires paired t-tests',
-      'They are the same method with different names',
+      'Heuristic evaluation requires paired t-tests to validate findings',
+      'They are the same method with different names and no focus difference',
     ],
     correctOption: 0,
     explanationSteps: [
@@ -43,9 +43,9 @@ const OVERVIEW_QUESTIONS: NetworkingQuestion[] = [
     prompt: 'Who usually performs a cognitive walkthrough?',
     options: [
       'Designers, UX researchers, and other evaluators',
-      'Only end-users with no design team present',
-      'Only statistics instructors',
-      'Only software developers after launch',
+      'Only end-users with no design or research team present',
+      'Only statistics instructors working outside the design process',
+      'Only software developers after the product has already launched',
     ],
     correctOption: 0,
     explanationSteps: [
@@ -143,9 +143,9 @@ const PROCESS_QUESTIONS: NetworkingQuestion[] = [
     prompt: 'What should be prepared before running a cognitive walkthrough?',
     options: [
       'Representative user goals, task steps, and interface states/actions',
-      'A deployment-scale A/B test',
-      'Only a p-value threshold',
-      'Only demographic questions',
+      'A deployment-scale A/B test with live traffic assigned randomly',
+      'Only a p-value threshold for judging later significance',
+      'Only demographic questions with no task or interface preparation',
     ],
     correctOption: 0,
     explanationSteps: [
@@ -199,9 +199,9 @@ const PLURALISTIC_QUESTIONS: NetworkingQuestion[] = [
     prompt: 'What makes a pluralistic walkthrough pluralistic?',
     options: [
       'It includes users, developers, and UX researchers together',
-      'It uses multiple p-values',
-      'It always compares more than two prototypes statistically',
-      'It runs only on live deployed products',
+      'It uses multiple p-values to compare severity statistically',
+      'It always compares more than two prototypes with statistical tests',
+      'It runs only on live deployed products in production use',
     ],
     correctOption: 0,
     explanationSteps: [

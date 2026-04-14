@@ -8,8 +8,8 @@ const RESEARCH_ETHICS_QUESTIONS: NetworkingQuestion[] = [
     prompt: 'What is the baseline rule for experiments involving humans?',
     options: [
       'They always require ethics consideration',
-      'They never need ethics review if the interface is simple',
-      'Only surveys need ethics consideration',
+      'They never need ethics review if the interface seems simple',
+      'Only surveys need ethics consideration among HCI study methods',
       'Only statistically significant studies need ethics consideration',
     ],
     correctOption: 0,
@@ -56,9 +56,9 @@ const RESEARCH_ETHICS_QUESTIONS: NetworkingQuestion[] = [
     prompt: 'Why is the Stanford Prison Experiment often cited in ethics discussions?',
     options: [
       'It illustrates severe harm and poor protection of participant welfare',
-      'It is a model example of informed consent done well',
-      'It proves all experiments should be unmoderated',
-      'It is mainly used to explain Fitts’ Law',
+      'It is a model example of informed consent and participant care',
+      'It proves all experiments should be unmoderated rather than supervised',
+      'It is mainly used to explain Fitts’ Law and pointing behavior',
     ],
     correctOption: 0,
     explanationSteps: [
@@ -93,7 +93,7 @@ const CONSENT_PRIVACY_QUESTIONS: NetworkingQuestion[] = [
       'Participants knowingly agree after understanding the study and its implications',
       'Participants are enrolled automatically unless they notice and opt out',
       'Participants are told only what the researcher thinks is necessary',
-      'Participants sign a form after the study ends',
+      'Participants sign a form after the study ends and everything is over',
     ],
     correctOption: 0,
     explanationSteps: [
@@ -127,9 +127,9 @@ const CONSENT_PRIVACY_QUESTIONS: NetworkingQuestion[] = [
     prompt: 'Why is the Texas Vampires Incident relevant in ethics discussions?',
     options: [
       'It highlights the harms of exposing sensitive identity-related information without protection',
-      'It is a classic example of excellent participant debriefing',
-      'It demonstrates a perfect accessibility audit',
-      'It defines the TCPS 2 principles',
+      'It is a classic example of excellent participant debriefing practice',
+      'It demonstrates a perfect accessibility audit with no privacy concerns',
+      'It is the case study that formally defines the TCPS 2 principles',
     ],
     correctOption: 0,
     explanationSteps: [
@@ -145,9 +145,9 @@ const CONSENT_PRIVACY_QUESTIONS: NetworkingQuestion[] = [
     prompt: 'Why do accountability and traceability matter in ethical design?',
     options: [
       'They help people understand decisions and identify responsibility when harm occurs',
-      'They make deception more efficient',
-      'They eliminate the need for accessibility',
-      'They only matter in physical product design',
+      'They make deception and manipulation more efficient for designers',
+      'They eliminate the need for accessibility and inclusive design work',
+      'They only matter in physical product design and not software',
     ],
     correctOption: 0,
     explanationSteps: [

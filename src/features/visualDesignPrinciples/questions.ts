@@ -8,9 +8,9 @@ const FOUNDATIONS_QUESTIONS: NetworkingQuestion[] = [
     prompt: 'Which statement best matches the lecture’s visual-design framing of GUI?',
     options: [
       'GUI is dominant and easy to improve, but GUI alone does not automatically mean good UI',
-      'Any GUI is automatically a good interface',
-      'GUI has been replaced completely by CLI',
-      'GUI quality depends only on color choice',
+      'Any GUI is automatically a good interface once screens exist',
+      'GUI has been replaced completely by CLI in modern systems',
+      'GUI quality depends only on color choice and visual styling',
     ],
     correctOption: 0,
     explanationSteps: [
@@ -26,9 +26,9 @@ const FOUNDATIONS_QUESTIONS: NetworkingQuestion[] = [
     prompt: 'Why do many systems still fail despite using GUI interfaces?',
     options: [
       'Because of poor UI design such as hard-to-find items and awkward input mechanisms',
-      'Because GUI prevents any user learning',
-      'Because white space is always bad',
-      'Because design principles are strict laws instead of guidelines',
+      'Because GUI prevents any user learning no matter how it is designed',
+      'Because white space is always bad for interfaces and readability',
+      'Because design principles are strict laws rather than flexible guidelines',
     ],
     correctOption: 0,
     explanationSteps: [

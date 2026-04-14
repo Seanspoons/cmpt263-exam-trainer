@@ -25,9 +25,9 @@ const FOUNDATIONS_QUESTIONS: NetworkingQuestion[] = [
     prompt: 'Which option best captures why designers prototype early?',
     options: [
       'To explore ideas, communicate, and fail quickly without committing too early',
-      'To avoid talking to users',
-      'To finalize implementation details immediately',
-      'To prove the first idea is always best',
+      'To avoid talking to users or getting early feedback at all',
+      'To finalize implementation details and engineering decisions immediately',
+      'To prove that the first design idea is always the best one',
     ],
     correctOption: 0,
     explanationSteps: [
@@ -98,9 +98,9 @@ const SKETCHING_QUESTIONS: NetworkingQuestion[] = [
     prompt: 'Why is sketching a common low-fidelity prototyping method?',
     options: [
       'It needs few resources and helps express, develop, and communicate ideas',
-      'It requires specialized fabrication equipment',
-      'It guarantees the final design is correct',
-      'It removes the need for iteration',
+      'It requires specialized fabrication equipment and expensive materials',
+      'It guarantees that the final design direction is already correct',
+      'It removes the need for later iteration or alternative exploration',
     ],
     correctOption: 0,
     explanationSteps: [
@@ -188,9 +188,9 @@ const ALTERNATIVES_QUESTIONS: NetworkingQuestion[] = [
     prompt: 'What is the main danger of fixating on the first design idea?',
     options: [
       'You can get stuck on a local maximum instead of exploring better alternatives',
-      'You will always create too many prototypes',
-      'You will automatically improve accessibility',
-      'You will avoid all design tradeoffs',
+      'You will always create too many prototypes before choosing anything',
+      'You will automatically improve accessibility just by committing early',
+      'You will avoid all important design tradeoffs by choosing quickly',
     ],
     correctOption: 0,
     explanationSteps: [
@@ -206,9 +206,9 @@ const ALTERNATIVES_QUESTIONS: NetworkingQuestion[] = [
     prompt: 'Which approach best matches the lecture’s idea of getting the right design?',
     options: [
       'Generate many ideas, reflect, choose promising ones, develop them in parallel, and iterate the final choice',
-      'Pick the first acceptable idea and polish it immediately',
-      'Avoid new ideas once one concept is selected',
-      'Spend most time pitching the first concept to others',
+      'Pick the first acceptable idea and polish it immediately in detail',
+      'Avoid any new ideas once one early concept has been selected',
+      'Spend most of the time pitching the first concept instead of exploring',
     ],
     correctOption: 0,
     explanationSteps: [
@@ -310,9 +310,9 @@ const STORYBOARD_PAPER_QUESTIONS: NetworkingQuestion[] = [
     prompt: 'What is paper prototyping especially good for?',
     options: [
       'Exploring navigation, workflow, content organization, and backtracking',
-      'Testing final system performance under load',
-      'Simulating only invisible backend logic',
-      'Replacing all user testing',
+      'Testing final system performance under heavy load conditions',
+      'Simulating only invisible backend logic without visible screens',
+      'Replacing all user testing and later evaluation in the project',
     ],
     correctOption: 0,
     explanationSteps: [
@@ -395,9 +395,9 @@ const PITFALLS_TIPS_QUESTIONS: NetworkingQuestion[] = [
     prompt: 'Using fictional names, prices, and placeholder content in an LFP is usually:',
     options: [
       'A good practice because low-fidelity work should focus on design questions, not polished content',
-      'A sign the prototype is invalid',
-      'Required only for high-fidelity work',
-      'A major ethics violation',
+      'A sign the prototype is invalid and not worth showing users',
+      'Required only for high-fidelity work with production assets',
+      'A major ethics violation because the data is not real',
     ],
     correctOption: 0,
     explanationSteps: [

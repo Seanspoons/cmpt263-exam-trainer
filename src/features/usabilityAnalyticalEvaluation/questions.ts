@@ -25,9 +25,9 @@ const USABILITY_TESTING_QUESTIONS: NetworkingQuestion[] = [
     prompt: 'Why include demographic questions in a usability study?',
     options: [
       'To understand who the participants are and interpret findings in context',
-      'To replace the usability tasks',
-      'To compute p-values automatically',
-      'To prevent any bias from ever occurring',
+      'To replace the usability tasks and observation part of the study',
+      'To compute p-values automatically without further analysis work',
+      'To prevent any bias from ever occurring in the evaluation',
     ],
     correctOption: 0,
     explanationSteps: [
@@ -43,9 +43,9 @@ const USABILITY_TESTING_QUESTIONS: NetworkingQuestion[] = [
     prompt: 'A team wants quick feedback on a prototype before launch. Which evaluation approach is most direct?',
     options: [
       'Prototype usability test with representative tasks',
-      'Only web analytics on the live product',
-      'A paired t-test without any prototype',
-      'Only code review by developers',
+      'Only web analytics on the live product after deployment',
+      'A paired t-test without any prototype or user interaction',
+      'Only code review by developers without participant involvement',
     ],
     correctOption: 0,
     explanationSteps: [
@@ -61,9 +61,9 @@ const USABILITY_TESTING_QUESTIONS: NetworkingQuestion[] = [
     prompt: 'What is the main purpose of exit questions after a usability session?',
     options: [
       'Capture reflections, satisfaction, and perceived issues after task completion',
-      'Teach the participant how to redesign the interface',
-      'Replace task observation data',
-      'Select the alpha level',
+      'Teach the participant how to redesign the interface in detail',
+      'Replace the task observation data collected during the session',
+      'Select the alpha level for later statistical significance testing',
     ],
     correctOption: 0,
     explanationSteps: [
@@ -82,9 +82,9 @@ const MAZE_QUESTIONS: NetworkingQuestion[] = [
     prompt: 'Maze is primarily used for what kind of study?',
     options: [
       'Unmoderated usability study of prototypes or flows',
-      'Long-form ethnography only',
-      'Statistical significance testing only',
-      'Physical TUI fabrication',
+      'Long-form ethnography conducted only in natural field settings',
+      'Statistical significance testing with no usability tasks at all',
+      'Physical TUI fabrication and cardboard model construction',
     ],
     correctOption: 0,
     explanationSteps: [
@@ -100,9 +100,9 @@ const MAZE_QUESTIONS: NetworkingQuestion[] = [
     prompt: 'In Maze, what are blocks used for?',
     options: [
       'Structuring different parts of a study such as tasks and questions',
-      'Preventing all participant mistakes',
-      'Running a t-test inside the prototype',
-      'Replacing facilitator notes in moderated sessions',
+      'Preventing all participant mistakes before they can happen',
+      'Running a t-test directly inside the prototype or study flow',
+      'Replacing facilitator notes in moderated usability sessions',
     ],
     correctOption: 0,
     explanationSteps: [
@@ -139,9 +139,9 @@ const ANALYTICAL_EVAL_QUESTIONS: NetworkingQuestion[] = [
     prompt: 'What is analytical evaluation in HCI?',
     options: [
       'Expert-based evaluation done without direct end-user participation',
-      'A live usability test with many participants',
-      'Only a questionnaire benchmark',
-      'A deployment analytics dashboard',
+      'A live usability test with many participants doing tasks',
+      'Only a questionnaire benchmark with no expert inspection',
+      'A deployment analytics dashboard for post-launch behavior data',
     ],
     correctOption: 0,
     explanationSteps: [

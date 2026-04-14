@@ -8,9 +8,9 @@ const CONTROLLED_EXPERIMENT_QUESTIONS: NetworkingQuestion[] = [
     prompt: 'Why are controlled experiments valuable in HCI research?',
     options: [
       'They isolate variables to test cause-effect relationships',
-      'They guarantee perfect realism',
-      'They eliminate the need for hypotheses',
-      'They replace statistical analysis entirely',
+      'They guarantee perfect realism in every study environment',
+      'They eliminate the need for hypotheses before collecting data',
+      'They replace statistical analysis and interpretation entirely',
     ],
     correctOption: 0,
     explanationSteps: [
@@ -100,9 +100,9 @@ const HYPOTHESIS_QUESTIONS: NetworkingQuestion[] = [
     prompt: 'What does the alternative hypothesis Ha represent?',
     options: [
       'A claim that some effect, difference, or relationship exists',
-      'A guarantee that the study is significant',
-      'A descriptive statistic only',
-      'The same thing as alpha',
+      'A guarantee that the study result will be statistically significant',
+      'A descriptive statistic used to summarize the collected sample',
+      'The same thing as the chosen significance level alpha',
     ],
     correctOption: 0,
     explanationSteps: [
@@ -171,9 +171,9 @@ const HYPOTHESIS_QUESTIONS: NetworkingQuestion[] = [
     prompt: 'What does statistical significance mean in this course context?',
     options: [
       'The observed result is unlikely under H0 at the chosen alpha level',
-      'The result is definitely important in practice',
-      'The result must generalize to every context',
-      'The mean and median are equal',
+      'The result is definitely important in practice for all decisions',
+      'The result must generalize to every context and user population',
+      'The mean and median are equal in the sample distribution',
     ],
     correctOption: 0,
     explanationSteps: [

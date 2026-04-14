@@ -46,9 +46,9 @@ const WHAT_IS_HCI_QUESTIONS: NetworkingQuestion[] = [
     prompt: 'Which learning objective best matches the introduction lecture?',
     options: [
       'Design useful and usable interfaces for users’ needs',
-      'Write the most optimized algorithms possible',
-      'Memorize company org charts',
-      'Treat users as interchangeable with designers',
+      'Write the most optimized algorithms possible for raw performance',
+      'Memorize company org charts and course logistics for recall',
+      'Treat users as interchangeable with designers during interface design',
     ],
     correctOption: 0,
     explanationSteps: [
@@ -67,9 +67,9 @@ const UI_UX_INTERACTION_QUESTIONS: NetworkingQuestion[] = [
     prompt: 'Which statement best defines the user interface?',
     options: [
       'Everything the user encounters and interacts with, including labels, layout, navigation, response, and help',
-      'Only the color palette and icons',
-      'Only the backend implementation',
-      'Only the emotional impact of a product',
+      'Only the color palette, icons, and visible surface styling',
+      'Only the backend implementation and internal program logic',
+      'Only the emotional impact and brand feeling of a product',
     ],
     correctOption: 0,
     explanationSteps: [
@@ -177,9 +177,9 @@ const USER_CENTERED_DESIGN_QUESTIONS: NetworkingQuestion[] = [
     prompt: 'Why is “the designer is not the user” a high-value HCI reminder?',
     options: [
       'Because designers must design for user capabilities and needs rather than their own assumptions',
-      'Because designers should ignore users completely',
-      'Because users and designers always want the same thing',
-      'Because personal taste is enough for interface design',
+      'Because designers should ignore users once the first concept exists',
+      'Because users and designers usually want the exact same interaction style',
+      'Because a designer’s personal taste is enough for interface decisions',
     ],
     correctOption: 0,
     explanationSteps: [
@@ -309,9 +309,9 @@ const GOOD_POOR_DESIGN_QUESTIONS: NetworkingQuestion[] = [
     prompt: 'Why does HCI matter?',
     options: [
       'Because interface quality affects whether technology is understandable, usable, and valuable to people',
-      'Because users should adapt completely to systems',
-      'Because design is less important than code in all cases',
-      'Because every user behaves identically',
+      'Because users should adapt completely to systems no matter how poor they are',
+      'Because design is less important than code in essentially all cases',
+      'Because every user behaves identically across tasks and contexts',
     ],
     correctOption: 0,
     explanationSteps: [

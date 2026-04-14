@@ -8,9 +8,9 @@ const FOUNDATIONS_QUESTIONS: NetworkingQuestion[] = [
     prompt: 'What is cognition?',
     options: [
       'The process by which knowledge and understanding is developed in the mind',
-      'The physical shape of an input device',
-      'Only long-term memory retrieval',
-      'A list of interface types by decade',
+      'The physical shape and layout of an input device for interaction',
+      'Only the long-term memory retrieval part of human thinking',
+      'A historical list of interface types grouped by decade',
     ],
     correctOption: 0,
     explanationSteps: [
@@ -100,9 +100,9 @@ const ATTENTION_SALIENCE_QUESTIONS: NetworkingQuestion[] = [
     prompt: 'What is attention in the lecture framing?',
     options: [
       'Selecting what to concentrate on from surrounding stimuli',
-      'Remembering long-term facts only',
-      'Physically sensing light before the brain interprets it',
-      'Typing commands in a shell',
+      'Remembering long-term facts without any perception involved',
+      'Physically sensing light before the brain interprets the signal',
+      'Typing commands in a shell during command-line interaction',
     ],
     correctOption: 0,
     explanationSteps: [
@@ -226,9 +226,9 @@ const PERCEPTION_QUESTIONS: NetworkingQuestion[] = [
     prompt: 'Why is perception not fully reliable?',
     options: [
       'It is shaped by context, conditions, illusions, multisensory conflict, and prior knowledge',
-      'It is identical to physical measurement',
-      'It depends only on the retina with no interpretation',
-      'It never differs across individuals',
+      'It is identical to direct physical measurement of the external world',
+      'It depends only on the retina and involves no later interpretation',
+      'It never differs across individuals viewing the same display',
     ],
     correctOption: 0,
     explanationSteps: [
@@ -244,9 +244,9 @@ const PERCEPTION_QUESTIONS: NetworkingQuestion[] = [
     prompt: 'Which statement best reflects the lecture’s view of visual perception?',
     options: [
       'What we see is a constructed model of the world shaped by environment, experience, and stored knowledge',
-      'Vision is a perfect recording of the external world',
-      'Vision works independently of prior knowledge',
-      'Vision is the same as long-term memory',
+      'Vision is a perfect recording of the external world as it exists',
+      'Vision works independently of prior knowledge and past experience',
+      'Vision is basically the same thing as long-term memory storage',
     ],
     correctOption: 0,
     explanationSteps: [
@@ -265,9 +265,9 @@ const GESTALT_QUESTIONS: NetworkingQuestion[] = [
     prompt: 'What is the core Gestalt idea highlighted in the lecture?',
     options: [
       'The organized whole is perceived as greater than the sum of the parts',
-      'People only see individual pixels',
-      'Similarity never matters in grouping',
-      'Perception is unaffected by layout',
+      'People mainly see isolated individual pixels rather than structure',
+      'Similarity never matters when users group items in a layout',
+      'Perception is unaffected by layout, spacing, or grouping cues',
     ],
     correctOption: 0,
     explanationSteps: [

@@ -8,9 +8,9 @@ const FOUNDATIONS_QUESTIONS: NetworkingQuestion[] = [
     prompt: 'Why do we evaluate interfaces instead of only asking whether they technically work?',
     options: [
       'Because evaluation asks how well the system works and whether users can use and like it',
-      'Because evaluation replaces design entirely',
-      'Because evaluation only matters after launch',
-      'Because implementation quality makes user experience irrelevant',
+      'Because evaluation replaces the rest of the design process entirely',
+      'Because evaluation only matters after launch and not during design',
+      'Because implementation quality makes user experience mostly irrelevant',
     ],
     correctOption: 0,
     explanationSteps: [
@@ -26,9 +26,9 @@ const FOUNDATIONS_QUESTIONS: NetworkingQuestion[] = [
     prompt: 'Why is evaluation especially valuable before product launch?',
     options: [
       'It helps discover flaws before release, when changes are still cheaper and safer',
-      'It guarantees zero future issues',
-      'It removes the need for redesign',
-      'It only measures aesthetic taste',
+      'It guarantees zero future issues once the product is released',
+      'It removes the need for redesign or any later iteration',
+      'It mainly measures aesthetic taste rather than actual usability',
     ],
     correctOption: 0,
     explanationSteps: [
@@ -96,9 +96,9 @@ const EVALUATION_TYPES_QUESTIONS: NetworkingQuestion[] = [
     prompt: 'What best describes quick and dirty evaluation?',
     options: [
       'Fast informal feedback from a small number of users or experts with little structure',
-      'A formal randomized controlled trial only',
-      'A method that always requires 20+ users',
-      'A type of field study that lasts months',
+      'A formal randomized controlled trial with strict statistical control',
+      'A method that always requires at least 20 or more users',
+      'A type of field study that must last for several months',
     ],
     correctOption: 0,
     explanationSteps: [
@@ -114,9 +114,9 @@ const EVALUATION_TYPES_QUESTIONS: NetworkingQuestion[] = [
     prompt: 'What defines analytical evaluation?',
     options: [
       'Experts inspect or model the interface without involving real users directly',
-      'Real users perform tasks in a lab',
-      'Participants use the product at home for a week',
-      'Only questionnaire data is collected',
+      'Real users perform representative tasks in a controlled lab setting',
+      'Participants use the product at home for a week in context',
+      'Only questionnaire data is collected with no inspection or modelling',
     ],
     correctOption: 0,
     explanationSteps: [
@@ -187,9 +187,9 @@ const TESTING_STRUCTURE_QUESTIONS: NetworkingQuestion[] = [
     prompt: 'What is the right mindset for a usability test session?',
     options: [
       'You are testing the system, not judging whether the participant is good at using computers',
-      'You are grading the participant’s intelligence',
-      'You should correct every mistake immediately',
-      'You should hide all tasks from participants until the end',
+      'You are grading the participant’s intelligence and computer skill',
+      'You should correct every participant mistake the moment it happens',
+      'You should hide all tasks and goals from participants until the end',
     ],
     correctOption: 0,
     explanationSteps: [
