@@ -54,8 +54,8 @@ export const UNIT_OPTIONS: UnitOption[] = [
   {
     id: 'psychology',
     label: 'Psychology',
-    implemented: false,
-    questionCount: 0,
+    implemented: true,
+    questionCount: 24,
   },
   {
     id: 'heuristic-evaluation',
