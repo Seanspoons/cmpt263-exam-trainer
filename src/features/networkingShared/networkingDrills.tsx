@@ -78,7 +78,7 @@ export function NetworkingDrillPractice({
   const { recordAttempt, overrideAttemptResult } = useSessionContext()
   const { requestConfirm } = useConfirmDialog()
   const { unitLabel, subtopicLabel } = useTopicContext()
-  const { hasNextSubtopic, goToNextSubtopic } = useUnitNavigationContext()
+  const { hasNextSubtopic, goToNextSubtopic, hasNextUnit, goToNextUnit } = useUnitNavigationContext()
   const seenQuestionIdsRef = useRef<Set<string>>(new Set())
   const lastQuestionIdRef = useRef<string | null>(null)
 
@@ -117,9 +117,21 @@ export function NetworkingDrillPractice({
             confirmLabel: 'Move to Next Topic',
             cancelLabel: 'Stay Here',
           })
+        : hasNextUnit
+          ? await requestConfirm({
+              title: 'Unit Completed',
+              message:
+                'You have seen all questions in the last topic of this unit. Move to the next unit?',
+              confirmLabel: 'Move to Next Unit',
+              cancelLabel: 'Stay Here',
+            })
         : false
       if (wantsNext) {
-        goToNextSubtopic()
+        if (hasNextSubtopic) {
+          goToNextSubtopic()
+        } else if (hasNextUnit) {
+          goToNextUnit()
+        }
         return
       }
       seenQuestionIdsRef.current.clear()

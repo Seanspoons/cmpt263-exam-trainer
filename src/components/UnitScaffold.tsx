@@ -4,7 +4,8 @@ import { TopicProvider } from './TopicContext'
 import { UnitNavigationProvider } from './UnitNavigationContext'
 import { TabNav } from './TabNav'
 import { PlaceholderPanel } from './PlaceholderPanel'
-import type { SubtopicId } from '../lib/study'
+import { UNIT_OPTIONS, type SubtopicId } from '../lib/study'
+import { UNIT_NAVIGATE_EVENT } from '../lib/navigation'
 import type { ReactNode } from 'react'
 
 type SubtopicConfig = {
@@ -65,6 +66,21 @@ export function UnitScaffold({
     const next = renderedSubtopics[selectedRenderedIndex + 1]
     if (!next) return
     setActiveSubtopic(next.id)
+  }
+  const currentUnitIndex = UNIT_OPTIONS.findIndex((option) => option.label === unitLabel)
+  const nextImplementedUnit =
+    currentUnitIndex >= 0
+      ? UNIT_OPTIONS.slice(currentUnitIndex + 1).find((option) => option.implemented)
+      : null
+  const hasNextUnit = Boolean(nextImplementedUnit)
+  const goToNextUnit = () => {
+    if (typeof window === 'undefined') return
+    if (!nextImplementedUnit) return
+    window.dispatchEvent(
+      new CustomEvent(UNIT_NAVIGATE_EVENT, {
+        detail: { unitId: nextImplementedUnit.id },
+      }),
+    )
   }
 
   const tabOptions = hasAllTopics
@@ -130,6 +146,8 @@ export function UnitScaffold({
           value={{
             hasNextSubtopic,
             goToNextSubtopic,
+            hasNextUnit,
+            goToNextUnit,
           }}
         >
           <TopicProvider
