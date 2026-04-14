@@ -25,6 +25,12 @@ import {
   generateMfpWizardOfOzQuestion,
 } from '../features/mediumFidelityPrototypes/questions'
 import {
+  generateUeFoundationQuestion,
+  generateUeTaskParticipantQuestion,
+  generateUeTestingBasicsQuestion,
+  generateUeTypesQuestion,
+} from '../features/usabilityEvaluation/questions'
+import {
   generateTcdFoundationsQuestion,
   generateTcdIdentificationQuestion,
   generateTcdInterviewSurveyQuestion,
@@ -200,6 +206,12 @@ const EXAM_GENERATORS_BY_UNIT: Partial<Record<UnitId, Array<() => NetworkingQues
     generateMfpFidelityComparisonQuestion,
     generateMfpPrototypeTypesQuestion,
     generateMfpToolsQuestion,
+  ],
+  'usability-evaluation': [
+    generateUeFoundationQuestion,
+    generateUeTypesQuestion,
+    generateUeTestingBasicsQuestion,
+    generateUeTaskParticipantQuestion,
   ],
   'statistical-analysis': [
     generateControlledExperimentQuestion,
