@@ -9,10 +9,12 @@ import { IntroductionToHciUnit } from './features/introductionToHci/Introduction
 import { PsychologyUnit } from './features/psychology/PsychologyUnit'
 import { QuestionnairesUnit } from './features/questionnaires/QuestionnairesUnit'
 import { StatisticalAnalysisUnit } from './features/statisticalAnalysis/StatisticalAnalysisUnit'
+import { TaskCenteredDesignUnit } from './features/taskCenteredDesign/TaskCenteredDesignUnit'
 import { TuiUnit } from './features/tui/TuiUnit'
 import { CognitionUnit } from './features/cognition/CognitionUnit'
 import { UsabilityUnit } from './features/usability/UsabilityUnit'
 import { UsabilityAnalyticalEvaluationUnit } from './features/usabilityAnalyticalEvaluation/UsabilityAnalyticalEvaluationUnit'
+import { VisualDesignPrinciplesUnit } from './features/visualDesignPrinciples/VisualDesignPrinciplesUnit'
 import { SessionProgressPanel } from './components/SessionProgressPanel'
 import { ExamModePanel } from './components/ExamModePanel'
 import { SessionProvider } from './components/SessionContext'
@@ -79,6 +81,10 @@ function App() {
         return <PsychologyUnit />
       case 'heuristic-evaluation':
         return <HeuristicEvaluationUnit />
+      case 'task-centered-design':
+        return <TaskCenteredDesignUnit />
+      case 'visual-design-principles':
+        return <VisualDesignPrinciplesUnit />
       case 'statistical-analysis':
         return <StatisticalAnalysisUnit />
       case 'questionnaires':

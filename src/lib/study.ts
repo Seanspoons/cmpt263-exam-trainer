@@ -7,6 +7,8 @@ export type UnitId =
   | 'cognition'
   | 'psychology'
   | 'heuristic-evaluation'
+  | 'task-centered-design'
+  | 'visual-design-principles'
   | 'statistical-analysis'
   | 'questionnaires'
   | 'usability-analytical-evaluation'
@@ -62,6 +64,18 @@ export const UNIT_OPTIONS: UnitOption[] = [
     label: 'Heuristic Evaluation',
     implemented: true,
     questionCount: 29,
+  },
+  {
+    id: 'task-centered-design',
+    label: 'Task-Centered Design',
+    implemented: false,
+    questionCount: 0,
+  },
+  {
+    id: 'visual-design-principles',
+    label: 'Visual Design Principles',
+    implemented: false,
+    questionCount: 0,
   },
   {
     id: 'statistical-analysis',
