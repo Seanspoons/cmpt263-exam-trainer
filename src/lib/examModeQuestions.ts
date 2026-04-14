@@ -2,6 +2,15 @@ import { randomPick } from './random'
 import type { UnitId } from './study'
 import type { NetworkingQuestion } from '../features/networkingShared/networkingDrills'
 import {
+  generateAttentionSalienceQuestion,
+  generateCognitionDesignImplicationQuestion,
+  generateCognitionFoundationQuestion,
+  generateGestaltQuestion,
+  generateMemoryQuestion,
+  generateModesOfCognitionQuestion,
+  generatePerceptionQuestion,
+} from '../features/cognition/questions'
+import {
   generateCliGuiQuestion,
   generateEmergingInterfaceQuestion,
   generateInterfaceFoundationsQuestion,
@@ -94,6 +103,15 @@ const EXAM_GENERATORS_BY_UNIT: Partial<Record<UnitId, Array<() => NetworkingQues
     generateTouchMobileQuestion,
     generateEmergingInterfaceQuestion,
     generateTuiTaskSelectionQuestion,
+  ],
+  cognition: [
+    generateCognitionFoundationQuestion,
+    generateModesOfCognitionQuestion,
+    generateAttentionSalienceQuestion,
+    generatePerceptionQuestion,
+    generateGestaltQuestion,
+    generateMemoryQuestion,
+    generateCognitionDesignImplicationQuestion,
   ],
   'statistical-analysis': [
     generateControlledExperimentQuestion,

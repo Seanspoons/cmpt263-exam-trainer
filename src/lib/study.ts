@@ -46,8 +46,8 @@ export const UNIT_OPTIONS: UnitOption[] = [
   {
     id: 'cognition',
     label: 'Cognition',
-    implemented: false,
-    questionCount: 0,
+    implemented: true,
+    questionCount: 25,
   },
   {
     id: 'statistical-analysis',
